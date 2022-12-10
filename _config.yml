@@ -86,7 +86,7 @@ author:
   location         : #"Location"
   employer         :
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F7JeTfIcu67doQV0JCsUlSVR-yo-OMhcsr8ltLyVgigxJHiHKQzWO6xnmTPWM__3inxaZA6sz5youiSrRoasnmLOhT_xPbbg-tXqbCQC_h_wC4PkgE&user=5a1Cmk0AAAAJ"
+  googlescholar    : "https://scholar.google.com.sg/citations?user=S8_ES4MAAAAJ&hl=zh-CN"
   email            :  wanpeoplejie@gmail.com
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "renjiewan"
+  github           : "wanrenjie"
   google_plus      :
   keybase          :
   instagram        :
