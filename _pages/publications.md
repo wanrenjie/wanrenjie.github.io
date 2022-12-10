@@ -15,7 +15,7 @@ You can also find my full publication list on my [Google Scholar profile](https:
 
 **Conference**
 ======
-Chengxuan Zhu, **Renjie Wan**, Boxin Shi.	[***Neural Transmitted Radiance Fields***] (https://openreview.net/pdf?id=KglFYlTiASW), NeurIPS 2022 (Spotlight)
+Chengxuan Zhu, **Renjie Wan**, Boxin Shi.	***[Neural Transmitted Radiance Fields](https://openreview.net/pdf?id=KglFYlTiASW)***, NeurIPS 2022 (Spotlight)
 
 Yufei Wang, **Renjie Wan**, Wenhan Yang, Haoliang Li, Lap-Pui Chau, Alex C. Kot. ***Low-Light Image Enhancement with Normalizing Flow***, AAAI 2022
 
