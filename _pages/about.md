@@ -22,9 +22,9 @@ My research interests lie in the fields of Computational Photography and 3D Visi
 
 **Recent News**
 ======
-- One paper has been accepted to IEEE Transactions on Multimedia.
-- One paper has been accepted to NeurIPS 2022.
-- One paper has been accepted to IEEE TPAMI.
+- **2022.12** One paper has been accepted to IEEE Transactions on Multimedia.
+- **2022.09** One paper has been accepted to NeurIPS 2022.
+- **2022.04** One paper has been accepted to IEEE TPAMI.
 
 **Short Bio**
 ======
