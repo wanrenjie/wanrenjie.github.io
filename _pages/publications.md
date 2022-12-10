@@ -52,7 +52,7 @@ Haoliang Li, Sinno Jialin Pan, **Renjie Wan**, and Alex C. Kot, ***Heterogeneous
 **Renjie Wan**, Boxin Shi, Wenhan Yang, Bihan Wen, Ling-Yu Duan, Alex C. Kot.
 ***Purifying Low-light images via Near-infrared Enlightened Image***, IEEE Transactions on Multimedia (TMM), 2022
 
-Rizhao Cai, Zhi Li, **Renjie Wan**, Haoliang Li, Yongjian Hu, Alex C. Kot. ***Learning Meta Pattern for Face Anti-Spoofing***, IEEE Transactions on Information Forensics \& Security (TIFS), 2022
+Rizhao Cai, Zhi Li, **Renjie Wan**, Haoliang Li, Yongjian Hu, Alex C. Kot. ***Learning Meta Pattern for Face Anti-Spoofing***, IEEE Transactions on Information Forensics and Security (TIFS), 2022
 
 Ce Wang, Dejia Xu, **Renjie Wan**, Bin He, Boxin Shi, Alex C. Kot, Ling-yu Duan, ***Background Scene Recovery from an Image Looking through Colored Glass***, IEEE Transactions on Multimedia (TMM), 2022
 
