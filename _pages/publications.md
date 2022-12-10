@@ -44,7 +44,7 @@ Haoliang Li, Sinno Jialin Pan, **Renjie Wan**, and Alex C. Kot, ***Heterogeneous
 
 **Renjie Wan**, Boxin Shi, Ah-Hwee Tan, and Alex C. Kot, ***Sparsity based reflection removal using external patches***, In Proc. IEEE International Conference on Multimedia and Expo (ICME), Hong Kong, China, Jul. 2017. (Oral)
 
-**Renjie Wan**, Boxin Shi, Ah-Hwee Tan, and Alex C. Kot, ***Depth of field guided reflection removal***, In Proc. International Conference on Image Processing (ICIP), Phoenix, AZ, USA, Sep. 2016. (Oral)
+**Renjie Wan**, Boxin Shi, Ah-Hwee Tan, and Alex C. Kot, ***Depth of field guided reflection removal***, In Proc. International Conference on Image Processing (ICIP), Phoenix, AZ, USA, Sep. 2016. (Oral) [Code](https://github.com/wanrenjie/Depth-of-field-guided-reflection-removal)
 
 **Journal**
 ======
