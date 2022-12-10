@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Yan Wang"
+title: "Renjie Wan"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,34 +8,31 @@ redirect_from:
   - /about.html
 ---
 
-Professor <br>
-Shanghai Key Laboratory of Multidimensional Information Processing, East China Normal University, <br>
-500 Dongchuan Road, 524 Information Building, Shanghai 200240 China
+Assistant Professor <br>
+Department of Computer Science, Hong Kong Baptist University, Hong Kong
 
 
-<font color=LightCoral>I'm looking for self-motivated students working with me on medical image analysis, computer vision and machine learning for 2023. For prospective students, please send me an email with your CV and transcript.</font>
+<font color=LightCoral>I'm looking for self-motivated Ph.D. students. For prospective students, please send me an email with your CV and transcript.</font>
 
 
 
 
 **Research Interests**
 ======
-My research interests lie in the fields of Medical Imaging, Computer Vision, Shape Modeling, Object Recognition. 
+My research interests lie in the fields of Computational Photography and 3D Vision. 
 
 
 
 **Recent News**
 ======
-- One paper has been accepted to AAAI 2023.
->* [Intriguing Findings of Frequency Selection for Image Deblurring](https://arxiv.org/abs/2111.11745)
-- One paper has been accepted to MICCAI 2022.
->* [S3R: Self-supervised Spectral Regression for Hyperspectral Histopathology Image Classification](https://arxiv.org/abs/2209.08770)
-- One paper has been accepted to CVPR 2022.
->* [CP2: Copy-Paste Contrastive Pretraining for Semantic Segmentation](https://arxiv.org/pdf/2203.11709.pdf)
-- One paper has been accepted to TMI.
->* [Learning Inductive Attention Guidance for Partially Supervised Pancreatic Ductal Adenocarcinoma Prediction](../files/IAG-NET-online.pdf)
+- One paper has been accepted to IEEE Transactions on Multimedia.
+[comment]: >* [Intriguing Findings of Frequency Selection for Image Deblurring](https://arxiv.org/abs/2111.11745)
+- One paper has been accepted to NeurIPS 2022.
+[comment]: >* [S3R: Self-supervised Spectral Regression for Hyperspectral Histopathology Image Classification](https://arxiv.org/abs/2209.08770)
+- One paper has been accepted to IEEE TPAMI.
+[comment]: >* [CP2: Copy-Paste Contrastive Pretraining for Semantic Segmentation](https://arxiv.org/pdf/2203.11709.pdf)
 
 
 **Short Bio**
 ======
-Yan Wang is a Professor at the Shanghai Key Laboratory of Multidimensional Information Processing, East China Normal University, since October 2020. Before that, she was a postdoc researcher at the Department of Computer Science, [Johns Hopkins University](https://www.jhu.edu/), worked with [Bloomberg Distinguished Professor Alan Yuille](http://www.cs.jhu.edu/~ayuille/). She received her B.E. degree in electronics and information engineering from Huazhong University of Science and Technology, and completed her Ph.D. in electrical and electronic engineering at Nanyang Technological University, supervised by Professor [Alex Kot](https://personal.ntu.edu.sg/eackot/index.html). She has over 30 peer-reviewed publications in medical image analysis, computer vision and machine learning related areas, including IEEE Trans. PAMI, IEEE Trans. Image Processing, IEEE Trans. Medical Imaging, Medical Image Analysis, AAAI, ICCV, CVPR and MICCAI. 
+I am an Assistant Professor at the [Department of Computer Science] (https://www.comp.hkbu.edu.hk/v1/) of Hong Kong Baptist University. Before that, I obtained my Ph.D. degree from NTU in 2019 supervised by [Prof. Alex C. Kot] (http://www.ntu.edu.sg/home/eackot/index.html), Prof. Tan Ah Hwee, and Prof. Shi Boxin and my bachelor degree from the University of Electronic Science and Technology of China in 2012. I was a Wallenberg-NTU Presidential Postdoctoral Fellow of Nanyang Technological University from 2020 to 2022. 
