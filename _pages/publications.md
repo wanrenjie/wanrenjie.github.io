@@ -35,10 +35,9 @@ Daiqian Ma, Bai Yan, **Renjie Wan**, Ce Wang, Boxin Shi, and Ling-Yu Duan, ***Se
 
 Wang Ce, **Renjie Wan**, Feng Gao, Boxin Shi, Alex C. Kot, and Ling-Yu Duan, ***Learning to remove reflection for text images***,  IEEE International Conference on Multimedia and Expo (ICME), 2019
 
-
 Haoliang Li, Sinno Jialin Pan, **Renjie Wan**, and Alex C. Kot, ***Heterogeneous Transfer Learning via Deep Matrix Completion with Adversarial Kernel Embedding***, In Proc. Thirty-Third AAAI Conference on Artificial Intelligence (AAAI-19), Honolulu, USA, June 2018
 
-**Renjie Wan**, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, and Alex C. Kot, ***CRRN: Multi-Scale Guided Concurrent Reflection Removal Network***, In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Salt Lake City, USA, 2018
+**Renjie Wan**, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, and Alex C. Kot, ***CRRN: Multi-Scale Guided Concurrent Reflection Removal Network***, In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Salt Lake City, USA, 2018 [Project Page](https://github.com/wanrenjie/CoRRN)
 
 **Renjie Wan**, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, and Alex C. Kot, ***Benchmarking single-image reflection removal algorithms***, In Proc. International Conference on Computer Vision (ICCV), Venice, Italy, Oct. 2017
 
@@ -64,6 +63,6 @@ Haoliang Li, Shiqi Wang, **Renjie Wan**, Alex C. Kot, ***GMFAD: Towards Generali
 
 Haoliang Li, **Renjie Wan**, Shiqi Wang, Alex C. Kot, ***Unsupervised Domain Adaptation in the Wild via Disentangling Representation Learning***, International Journal of Computer Vision (IJCV), 2020
 
-**Renjie Wan**, Boxin Shi, Haoliang Li, Ling-Yu Duan, Ah-Hwee Tan, and Alex C. Kot, ***CoRRN: Cooperative Reflection Removal Network***, IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2019
+**Renjie Wan**, Boxin Shi, Haoliang Li, Ling-Yu Duan, Ah-Hwee Tan, and Alex C. Kot, ***CoRRN: Cooperative Reflection Removal Network***, IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2019 [Project Page](https://github.com/wanrenjie/CoRRN)
 
 **Renjie Wan**, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, Wen Gao, and Alex C. Kot, ***Region-Aware Reflection Removal with Unified Content and Gradient Priors***, IEEE Transactions on Image Processing (TIP), 2018
