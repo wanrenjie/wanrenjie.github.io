@@ -80,14 +80,14 @@ analytics:
 
 # Site Author
 author:
-  name             : "Yan Wang"
-  avatar           : "yan.png"
-  bio              : "Professor <br> East China Normal University"
+  name             : "Renjie Wan"
+  avatar           : "renjie3.png"
+  bio              : "Assistant Professor <br> Hong Kong Baptist University"
   location         : #"Location"
   employer         :
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F7JeTfIcu67doQV0JCsUlSVR-yo-OMhcsr8ltLyVgigxJHiHKQzWO6xnmTPWM__3inxaZA6sz5youiSrRoasnmLOhT_xPbbg-tXqbCQC_h_wC4PkgE&user=5a1Cmk0AAAAJ"
-  email            :  ywang@cee.ecnu.edu.cn
+  email            :  wanpeoplejie@gmail.com
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "wangyan921"
+  github           : "renjiewan"
   google_plus      :
   keybase          :
   instagram        :
