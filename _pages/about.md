@@ -18,8 +18,6 @@ Department of Computer Science, Hong Kong Baptist University, Hong Kong
 ======
 My research interests lie in the fields of Computational Photography and 3D Vision. 
 
-
-
 **Recent News**
 ======
 - **2022.12:** One paper has been accepted to IEEE Transactions on Multimedia.
