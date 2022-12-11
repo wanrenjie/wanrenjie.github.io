@@ -13,6 +13,8 @@ Department of Computer Science, Hong Kong Baptist University, Hong Kong
 
 <font color=LightCoral>I'm looking for self-motivated Ph.D. students. For prospective students, please send me an email with your CV and transcript.</font>
 
+Email: wanpeoplejie[at]gmail.com
+
 
 **Research Interests**
 ======
