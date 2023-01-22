@@ -17,7 +17,7 @@ Education
 
 Work experience
 ======
-* 2022.02 - Assistant Professor, Department of Computer Science, **Hong Kong Baptist University,** 
+* 2022.02 - Present Assistant Professor, Department of Computer Science, **Hong Kong Baptist University,** 
 * 2020.08 - 2022.02 Wallenberg-NTU Presidential Postdoctroal Fellow, School of Electrical and Electronic Engineering, **Nanyang Technological University** <br>
 * 2018.08 - 2020.08 Postdoc Researcher, School of Electrical and Electronic Engineering, **Nanyang Technological University** <br>
 &ensp;&ensp;&ensp; (Working with Prof. Alex C. Kot, Prof. Shi Boxin, and Prof. Ling-Yu Duan)

@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Renjie Wan （万人杰）"
+title                    : "Renjie Wan （萬人傑）"
 title_separator          : "-"
-name                     : &name "Yan Wang"
+name                     : &name "Renjie Wan"
 description              : &description "personal description"
 url                      : https://www.comp.hkbu.edu.hk/~renjiewan/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -83,7 +83,7 @@ author:
   name             : "Renjie Wan"
   avatar           : "renjie3.png"
   bio              : "Assistant Professor <br> Hong Kong Baptist University"
-  location         : #"Location"
+  location         : Hong Kong
   employer         :
 #  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com.sg/citations?user=S8_ES4MAAAAJ&hl=zh-CN"
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "wanrenjie"
+  github           : 
   google_plus      :
   keybase          :
   instagram        :
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : # "replacethistwitterhandle"
+  twitter          : wanpeoplejie
   vine             :
   weibo            :
   xing             :

@@ -13,18 +13,19 @@ Department of Computer Science, Hong Kong Baptist University, Hong Kong
 
 <font color=LightCoral>I'm looking for self-motivated Ph.D. students. For prospective students, please send me an email with your CV and transcript.</font>
 
+Email: wanpeoplejie[at]gmail.com
+
 
 **Research Interests**
 ======
 My research interests lie in the fields of Computational Photography and 3D Vision. 
 
-
-
 **Recent News**
 ======
-- One paper has been accepted to IEEE Transactions on Multimedia.
-- One paper has been accepted to NeurIPS 2022.
-- One paper has been accepted to IEEE TPAMI.
+- **2022.12:** One paper has been accepted to IEEE Transactions on Multimedia.
+- **2022.09:** One paper has been accepted to NeurIPS 2022.
+- **2022.09:** I receive the Blue Sky Research Fund of HKBU.
+- **2022.04:** One paper has been accepted to IEEE TPAMI.
 
 **Short Bio**
 ======
