@@ -75,3 +75,47 @@ div.talk iframe{padding-bottom:15px}
     div.publication div.img{width:23%}
     div.publication div.text{max-width:70%;text-align:left}
 }
+/* ===== Publications 统一布局与图片裁切（放在 main.css 最后） ===== */
+
+/* 每条论文：左图右文，垂直居中 */
+#publications #pubs .publication {
+  display: flex;
+  align-items: center;      /* 图片与文字垂直居中 */
+  gap: 5px;                /* 左右间距 */
+  margin: 22px 0;
+}
+
+/* 固定图片容器宽度，避免被文字挤压 */
+#publications #pubs .publication .img {
+  flex: 0 0 200px;          /* 你可调成 160/180/220，看整体平衡 */
+}
+
+/* 统一图片尺寸 + 裁切。用 !important 覆盖旧规则/内联属性 */
+#publications #pubs .publication .img img {
+  width: 100% !important;
+  height: 80px !important; /* 高度可微调：120–150 之间通常最顺眼 */
+  object-fit: cover !important;   /* 裁切不拉伸 */
+  display: block;
+  border-radius: 6px;
+}
+
+/* 文字区占满剩余空间 */
+#publications #pubs .publication .text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 移动端：改为上下堆叠 */
+@media (max-width: 700px) {
+  #publications #pubs .publication {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #publications #pubs .publication .img {
+    width: 100%;
+    max-width: 520px;
+  }
+  #publications #pubs .publication .img img {
+    height: 160px !important;   /* 手机上可稍微高一点更美观 */
+  }
+}
