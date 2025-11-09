@@ -102,10 +102,11 @@
       .header{ gap:8px; min-height:auto; padding:8px 0; font-size:14px }
       .header .ftsubheader{ font-size:13px }
       .content{ padding:20px 14px; margin:12px 0; border-radius:8px }
-      /* 移动端隐藏头像和logo图片，但保留出版物图片 */
+      /* 移动端隐藏所有图片 */
       .heading{ grid-template-columns:1fr; gap:16px }
       .heading .img{ display:none }
       .img_responsive{ display:none }
+      #pubs .publication .img{ display:none }
       .text.info h1{ font-size:1.5em; margin:0 0 4px 0 }
       .text.info h3{ font-size:0.85em }
       .text.info div{ font-size:13px }
@@ -113,10 +114,8 @@
       .text.topic{ grid-column:1 / -1; margin-top:12px }
       .text.topic .title{ font-size:15px }
       .text.topic ul{ font-size:14px; margin-left:20px }
-      /* 出版物在移动端显示图片 */
+      /* 出版物在移动端隐藏图片 */
       #pubs .publication{ flex-direction:column; align-items:flex-start }
-      #pubs .publication .img{ width:100%; max-width:100% }
-      #pubs .publication .img img{ height:140px !important; width:100% !important }
       #pubs .publication .text{ width:100% }
       #pubs .publication .title{ font-size:15px }
       #pubs .publication .authors{ font-size:13px }
@@ -218,7 +217,7 @@
 
   <!-- 右侧个人信息 -->
   <div class="text info">
-<h3 style="font-size: 0.9em; color: #666; margin-bottom: 0.5em; font-weight: normal;">Principal Investigator</h3>
+<h3 style="font-size: 0.9em; color: #666; margin-bottom: 0.9em; font-weight: normal;">Principal Investigator</h3>
     <h1>Renjie Wan</h1>
     <div>Assistant Professor</div>
     <div>Department of Computer Science</div>
