@@ -102,8 +102,11 @@
       .header{ gap:8px; min-height:auto; padding:8px 0; font-size:14px }
       .header .ftsubheader{ font-size:13px }
       .content{ padding:20px 14px; margin:12px 0; border-radius:8px }
-      .heading{ grid-template-columns:100px 1fr; gap:16px }
-      .img_responsive{ width:100px; height:100px }
+      /* 移动端隐藏所有图片 */
+      .heading{ grid-template-columns:1fr; gap:16px }
+      .heading .img{ display:none }
+      .img_responsive{ display:none }
+      #pubs .publication .img{ display:none }
       .text.info h1{ font-size:1.5em; margin:0 0 4px 0 }
       .text.info h3{ font-size:0.85em }
       .text.info div{ font-size:13px }
@@ -112,8 +115,7 @@
       .text.topic .title{ font-size:15px }
       .text.topic ul{ font-size:14px; margin-left:20px }
       #pubs .publication{ flex-direction:column; align-items:flex-start }
-      #pubs .publication .img{ flex:0 0 auto; width:100%; max-width:520px }
-      #pubs .publication .img img{ height:140px !important }
+      #pubs .publication .text{ width:100% }
       #pubs .publication .title{ font-size:15px }
       #pubs .publication .authors{ font-size:13px }
       #pubs .publication .venue{ font-size:13px }
@@ -153,9 +155,7 @@
   .header .ftsubheader{ font-size:11px }
   .content{ padding:16px 12px }
   .text.info h1{ font-size:1.3em }
-  .img_responsive{ width:90px; height:90px }
   .heading{ gap:12px }
-  #pubs .publication .img img{ height:120px !important }
 }</style>
 </head>
 <body>
