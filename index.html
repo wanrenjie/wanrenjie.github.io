@@ -125,14 +125,17 @@
       #teaching ul{ font-size:14px }
       .group .front .title{ font-size:15px }
       .alumni li{ font-size:14px }
+      /* 移动端取消负边距，避免文字重叠 */
+      .content .text[style*="grid-column:1 / -1"]{ margin-top:0 }
+      .text.info p{ margin-top:8px; line-height:1.5 }
     }
     .content .text p {
       margin-top: 4px;     /* 减小上边距 */
       margin-bottom: 15px;  /* 可选：让段落之间更紧凑 */
     }
     .content .text[style*="grid-column:1 / -1"] {
-    margin-top: -47px;
-  }
+      margin-top: -47px;
+    }
   .phd-students {
   display: grid;
   grid-template-columns: 1fr 1fr;  /* 两列 */
