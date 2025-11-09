@@ -22,7 +22,7 @@
     a:hover{ text-decoration:underline }
     .outercontainer{ max-width:1000px; margin:0 auto; padding:0 16px }
     header{ position:sticky; top:0; z-index:100; background:#0b4b75; color:#e6f1f8; box-shadow:0 2px 10px rgba(0,0,0,.08) }
-    .header{ display:flex; gap:20px; align-items:center; min-height:56px }
+    .header{ display:flex; gap:20px; align-items:center; min-height:56px; flex-wrap:wrap }
     .header a{ color:#e6f1f8 }
     .ftheader{ font-weight:700 }
     .body{ padding:18px 0 42px }
@@ -98,11 +98,31 @@
     .hidden{ display:none !important }
     .anchor{ scroll-margin-top:76px }
     @media (max-width:720px){
-      .heading{ grid-template-columns:110px 1fr }
-      .img_responsive{ width:110px; height:110px }
+      .outercontainer{ padding:0 12px }
+      .header{ gap:8px; min-height:auto; padding:8px 0; font-size:14px }
+      .header .ftsubheader{ font-size:13px }
+      .content{ padding:20px 14px; margin:12px 0; border-radius:8px }
+      .heading{ grid-template-columns:100px 1fr; gap:16px }
+      .img_responsive{ width:100px; height:100px }
+      .text.info h1{ font-size:1.5em; margin:0 0 4px 0 }
+      .text.info h3{ font-size:0.85em }
+      .text.info div{ font-size:13px }
+      .text.info p{ font-size:14px }
+      .text.topic{ grid-column:1 / -1; margin-top:12px }
+      .text.topic .title{ font-size:15px }
+      .text.topic ul{ font-size:14px; margin-left:20px }
       #pubs .publication{ flex-direction:column; align-items:flex-start }
       #pubs .publication .img{ flex:0 0 auto; width:100%; max-width:520px }
-      #pubs .publication .img img{ height:160px !important }
+      #pubs .publication .img img{ height:140px !important }
+      #pubs .publication .title{ font-size:15px }
+      #pubs .publication .authors{ font-size:13px }
+      #pubs .publication .venue{ font-size:13px }
+      .year-filter button{ font-size:13px; padding:5px 9px }
+      .year-heading{ font-size:16px; margin:20px 0 6px }
+      .phd-students{ grid-template-columns:1fr; font-size:14px; gap:4px }
+      #teaching ul{ font-size:14px }
+      .group .front .title{ font-size:15px }
+      .alumni li{ font-size:14px }
     }
     .content .text p {
       margin-top: 4px;     /* 减小上边距 */
@@ -126,7 +146,17 @@
   list-style-type: disc;          /* 确保有小黑点 */
 }
 
-  </style>
+/* 移动端更小屏幕优化 */
+@media (max-width:480px){
+  .header{ font-size:12px }
+  .header .ftheader{ font-size:13px }
+  .header .ftsubheader{ font-size:11px }
+  .content{ padding:16px 12px }
+  .text.info h1{ font-size:1.3em }
+  .img_responsive{ width:90px; height:90px }
+  .heading{ gap:12px }
+  #pubs .publication .img img{ height:120px !important }
+}</style>
 </head>
 <body>
   <header>
