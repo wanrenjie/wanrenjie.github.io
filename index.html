@@ -102,11 +102,10 @@
       .header{ gap:8px; min-height:auto; padding:8px 0; font-size:14px }
       .header .ftsubheader{ font-size:13px }
       .content{ padding:20px 14px; margin:12px 0; border-radius:8px }
-      /* 移动端隐藏所有图片 */
+      /* 移动端隐藏头像和logo图片，但保留出版物图片 */
       .heading{ grid-template-columns:1fr; gap:16px }
       .heading .img{ display:none }
       .img_responsive{ display:none }
-      #pubs .publication .img{ display:none }
       .text.info h1{ font-size:1.5em; margin:0 0 4px 0 }
       .text.info h3{ font-size:0.85em }
       .text.info div{ font-size:13px }
@@ -114,7 +113,10 @@
       .text.topic{ grid-column:1 / -1; margin-top:12px }
       .text.topic .title{ font-size:15px }
       .text.topic ul{ font-size:14px; margin-left:20px }
+      /* 出版物在移动端显示图片 */
       #pubs .publication{ flex-direction:column; align-items:flex-start }
+      #pubs .publication .img{ width:100%; max-width:100% }
+      #pubs .publication .img img{ height:140px !important; width:100% !important }
       #pubs .publication .text{ width:100% }
       #pubs .publication .title{ font-size:15px }
       #pubs .publication .authors{ font-size:13px }
@@ -127,7 +129,7 @@
       .alumni li{ font-size:14px }
       /* 移动端取消负边距，避免文字重叠 */
       .content .text[style*="grid-column:1 / -1"]{ margin-top:0 }
-      .text.info p{ margin-top:8px; line-height:1.5 }
+      .text.info p{ margin-top:20px; line-height:1.5 }
     }
     .content .text p {
       margin-top: 4px;     /* 减小上边距 */
@@ -292,11 +294,7 @@
           <button data-year="2024">2024</button>
           <button data-year="2023">2023</button>
           <button data-year="2022">2022</button>
-          <button data-year="2020">2020</button>
-          <button data-year="2019">2019</button>
-          <button data-year="2018">2018</button>
-          <button data-year="2017">2017</button>
-          <button data-year="2016">2016</button>
+          <button data-year="early">Early Papers</button>
         </div>
 
         <div id="pubs">
@@ -559,10 +557,10 @@
             </div>
           </div>
 
-          <!-- 2020 -->
-          <div class="year-heading" data-year-heading="2020">2020</div>
+          <!-- Early Papers (2020 and before) -->
+          <div class="year-heading" data-year-heading="early">Early Papers</div>
 
-          <div class="publication" data-year="2020">
+          <div class="publication" data-year="early">
             <div class="img"><img src="./renjie_files/ijcv.png" alt=""></div>
             <div class="text">
               <div class="title">Face Image Reflection Removal</div>
@@ -571,10 +569,7 @@
             </div>
           </div>
 
-          <!-- 2019 -->
-          <div class="year-heading" data-year-heading="2019">2019</div>
-
-          <div class="publication" data-year="2019">
+          <div class="publication" data-year="early">
             <div class="img"><img src="./renjie_files/TPAMI.png" alt=""></div>
             <div class="text">
               <div class="title">CoRRN: Cooperative Reflection Removal Network</div>
@@ -583,10 +578,7 @@
             </div>
           </div>
 
-          <!-- 2018 -->
-          <div class="year-heading" data-year-heading="2018">2018</div>
-
-          <div class="publication" data-year="2018">
+          <div class="publication" data-year="early">
             <div class="img"><img src="./renjie_files/Pub_CVPR18c.jpg" alt=""></div>
             <div class="text">
               <div class="title">CRRN: Multi-Scale Guided Concurrent Reflection Removal Network</div>
@@ -595,7 +587,7 @@
             </div>
           </div>
 
-          <div class="publication" data-year="2018">
+          <div class="publication" data-year="early">
             <div class="img"><img src="./renjie_files/Pub_TIP18a.jpg" alt=""></div>
             <div class="text">
               <div class="title">Region-Aware Reflection Removal with Unified Content and Gradient Priors</div>
@@ -604,10 +596,7 @@
             </div>
           </div>
 
-          <!-- 2017 -->
-          <div class="year-heading" data-year-heading="2017">2017</div>
-
-          <div class="publication" data-year="2017">
+          <div class="publication" data-year="early">
             <div class="img"><img src="./renjie_files/Pub_ICCV17a.jpg" alt=""></div>
             <div class="text">
               <div class="title">Benchmarking Single-Image Reflection Removal Algorithms</div>
@@ -616,10 +605,7 @@
             </div>
           </div>
 
-          <!-- 2016 -->
-          <div class="year-heading" data-year-heading="2016">2016</div>
-
-          <div class="publication" data-year="2016">
+          <div class="publication" data-year="early">
             <div class="img"><img src="./renjie_files/icip16.png" alt=""></div>
             <div class="text">
               <div class="title">Depth of field guided reflection removal</div>
