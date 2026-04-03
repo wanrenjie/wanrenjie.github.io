@@ -48,6 +48,50 @@
       padding-left:8px;
       padding-right:8px;
     }
+    /* Topic toggle button */
+    .topic-toggle{
+      appearance:none;
+      border:1px solid #cbd5e1;
+      background:#e8eef5;
+      color:#0b4b75;
+      padding:6px 10px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:14px;
+      font-weight:600;
+      transition:all .15s ease-in-out;
+    }
+    .topic-toggle:hover{ box-shadow:0 2px 6px rgba(0,0,0,.06) }
+    .topic-toggle.active{
+      background:#0b4b75;
+      color:#fff;
+      border-color:#0b4b75;
+    }
+    /* Topic filter bar */
+    .topic-filter{
+      display:none;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:8px 0 12px 0;
+    }
+    .topic-filter.show{ display:flex }
+    .topic-filter button{
+      appearance:none;
+      border:1px solid #cbd5e1;
+      background:#ffffff;
+      color:#0b4b75;
+      padding:6px 10px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:14px;
+      transition:all .15s ease-in-out;
+    }
+    .topic-filter button:hover{ box-shadow:0 2px 6px rgba(0,0,0,.06) }
+    .topic-filter button.active{
+      background:#0b4b75;
+      color:#fff;
+      border-color:#0b4b75;
+    }
     /* Year filter bar */
     .year-filter{
       display:flex;
@@ -75,15 +119,15 @@
     /* Publication rows: left image, right text */
     #pubs .publication{
       display:flex;
-      align-items:center;
+      align-items:stretch;
       gap:10px;
       margin:20px 0;
       width:100%;
     }
-    #pubs .publication .img{ flex:0 0 200px }
+    #pubs .publication .img{ flex:0 0 200px; display:flex; max-height:130px }
     #pubs .publication .img img{
       width:100% !important;
-      height:80px !important;
+      height:100% !important;
       object-fit:cover !important;
       display:block;
       border-radius:6px;
@@ -121,6 +165,8 @@
       #pubs .publication .authors{ font-size:13px }
       #pubs .publication .venue{ font-size:13px }
       .year-filter button{ font-size:13px; padding:5px 9px }
+      .topic-filter button{ font-size:13px; padding:5px 9px }
+      .topic-toggle{ font-size:13px; padding:5px 9px }
       .year-heading{ font-size:16px; margin:20px 0 6px }
       .phd-students{ grid-template-columns:1fr; font-size:14px; gap:4px }
       #teaching ul{ font-size:14px }
@@ -291,6 +337,7 @@
 
         <!-- Year Filter Buttons -->
         <div class="year-filter" aria-label="Filter publications by year">
+          <button class="topic-toggle">Topic</button>
           <button class="active" data-year="all">All</button>
           <button data-year="2026">2026</button>
           <button data-year="2025">2025</button>
@@ -300,338 +347,347 @@
           <button data-year="early">Early Papers</button>
         </div>
 
+        <!-- Topic Filter Buttons -->
+        <div class="topic-filter" aria-label="Filter publications by topic">
+          <button class="active" data-topic="all">All</button>
+          <button data-topic="copyright">Copyright Protection</button>
+          <button data-topic="neural-rep">Neural Representation</button>
+          <button data-topic="image-proc">Image Processing</button>
+          <button data-topic="ai-security">AI Security</button>
+        </div>
+
         <div id="pubs">
 
           <!-- 2026 -->
           <div class="year-heading" data-year-heading="2026">2026</div>
 
-            <div class="publication" data-year="2026">
+            <div class="publication" data-year="2026" data-topic="neural-rep">
             <div class="img"><img src="./renjie_files/CVPR2026.png" alt=""></div>
             <div class="text">
               <div class="title">Texvent: Asynchronous Event Data Simulation via Text Prompt</div>
               <div class="authors">Ruofei Wang, Peiqi Duan, Ka Chun Cheung, Simon See, Boxin Shi, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">CVPR 2026</span></div>
+              <div><span class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2026</span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2026">
+          <div class="publication" data-year="2026" data-topic="copyright">
             <div class="img"><img src="./renjie_files/aaai2026-1.png" alt=""></div>
             <div class="text">
               <div class="title">Creating Blank Canvas Against AI-enabled Image Forgery</div>
               <div class="authors">Qi Song, Ziyuan Luo, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">AAAI 2026</span></div>
+              <div><span class="venue">AAAI Conference on Artificial Intelligence (AAAI) 2026</span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2026">
+          <div class="publication" data-year="2026" data-topic="copyright">
             <div class="img"><img src="./renjie_files/aaai2026-2.png" alt=""></div>
             <div class="text">
               <div class="title">GS-Checker: Tampering Localization for 3D Gaussian Splatting</div>
               <div class="authors">Haoliang Han, Ziyuan Luo, Jun Qi, Anderson Rocha, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">AAAI 2026</span></div>
+              <div><span class="venue">AAAI Conference on Artificial Intelligence (AAAI) 2026</span></div>
             </div>
           </div>
 
           <!-- 2025 -->
           <div class="year-heading" data-year-heading="2025">2025</div>
 
-          <div class="publication" data-year="2025">
+          <div class="publication" data-year="2025" data-topic="copyright">
             <div class="img"><img src="./renjie_files/TIFS2025.png" alt=""></div>
             <div class="text">
               <div class="title">MantleMark: Migrating Watermarks from Multi-View Images to Radiance Fields via Frequency Modulation</div>
               <div class="authors">Ziyuan Luo, Jun Liu, Haoliang Li, Anderson Rocha, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">IEEE Transactions on Information Forensics and Security (TIFS), 2025</span></div>
+              <div><span class="venue">IEEE Transactions on Information Forensics and Security (TIFS) 2025</span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2025">
+          <div class="publication" data-year="2025" data-topic="copyright">
             <div class="img"><img src="./renjie_files/neurips25.png" alt=""></div>
             <div class="text">
               <div class="title">Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation</div>
               <div class="authors">Ziyuan Luo, Yangyi Zhao, Ka Chun Cheung, Simon See, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">NeurIPS 2025</span> / <span class="tag"><a href="https://github.com/luo-ziyuan/ImageSentinel">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">Conference on Neural Information Processing Systems (NeurIPS) 2025</span> / <span class="tag"><a href="https://github.com/luo-ziyuan/ImageSentinel">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2025">
+          <div class="publication" data-year="2025" data-topic="neural-rep">
             <div class="img"><img src="./renjie_files/MM2025-3.png" alt=""></div>
             <div class="text">
               <div class="title">Align 3D Representation and Text Embedding for 3D Content Personalization</div>
               <div class="authors">Qi Song, Ziyuan Luo, Ka Chun Cheung, Simon See, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">ACM MM 2025</span> / <span class="tag"><a href="https://github.com/qsong2001/Invert3D">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">ACM Multimedia (ACM MM) 2025</span> / <span class="tag"><a href="https://github.com/qsong2001/Invert3D">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2025">
+          <div class="publication" data-year="2025" data-topic="copyright">
             <div class="img"><img src="./renjie_files/MM2025-2.png" alt=""></div>
             <div class="text">
               <div class="title">MarkSplatter: Generalizable Watermarking for 3D Gaussian Splatting Model via Splatter Image Structure</div>
               <div class="authors">Xiufeng Huang, Ziyuan Luo, Qi Song, Ruofei Wang, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">ACM MM 2025</span> / <span class="tag"><a href="https://kevinhuangxf.github.io/marksplatter/">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">ACM Multimedia (ACM MM) 2025</span> / <span class="tag"><a href="https://kevinhuangxf.github.io/marksplatter/">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2025">
+          <div class="publication" data-year="2025" data-topic="neural-rep">
             <div class="img"><img src="./renjie_files/mm2025.png" alt=""></div>
             <div class="text">
               <div class="title">Stereo-GS: Multi-View Stereo Vision Model for Generalizable 3D Gaussian Splatting Reconstruction</div>
               <div class="authors">Xiufeng Huang, Ka Chun Cheung, Runmin Cong, Simon See, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">ACM MM 2025</span> / <span class="tag"><a href="https://kevinhuangxf.github.io/stereo-gs/">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">ACM Multimedia (ACM MM) 2025</span> / <span class="tag"><a href="https://kevinhuangxf.github.io/stereo-gs/">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2025">
+          <div class="publication" data-year="2025" data-topic="ai-security">
             <div class="img"><img src="./renjie_files/ICCV25.png" alt=""></div>
             <div class="text">
               <div class="title">Asynchronous Event Error-Minimizing Noise for Safeguarding Event Dataset</div>
               <div class="authors">Ruofei Wang, Peiqi Duan, Boxin Shi, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">ICCV 2025 (Highlight)</span> / <span class="tag"><a href="https://github.com/rfww/uevs">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">IEEE/CVF International Conference on Computer Vision (ICCV) 2025 (Highlight)</span> / <span class="tag"><a href="https://github.com/rfww/uevs">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2025">
+          <div class="publication" data-year="2025" data-topic="copyright">
             <div class="img"><img src="./renjie_files/TPAMI2025.png" alt=""></div>
             <div class="text">
               <div class="title">The NeRF Signature: Codebook-Aided Watermarking for Neural Radiance Fields</div>
               <div class="authors">Ziyuan Luo, Anderson Rocha, Boxin Shi, Qing Guo, Haoliang Li, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">IEEE TPAMI 2025</span> / <span class="tag"><a href="https://github.com/luo-ziyuan/NeRF_Signature">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2025</span> / <span class="tag"><a href="https://github.com/luo-ziyuan/NeRF_Signature">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2025">
+          <div class="publication" data-year="2025" data-topic="ai-security">
             <div class="img"><img src="./renjie_files/AAAI2025.png" alt=""></div>
             <div class="text">
               <div class="title">Meme Trojan: Backdoor Attacks Against Hateful Meme Detection via Cross-Modal Triggers</div>
               <div class="authors">Ruofei Wang, Hongzhan Lin, Ziyuan Luo, Ka Chun Cheung, Simon See, Jing Ma, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">AAAI 2025 (Oral)</span> / <span class="tag"><a href="https://github.com/rfww/CMTMEME">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">AAAI Conference on Artificial Intelligence (AAAI) 2025 (Oral)</span> / <span class="tag"><a href="https://github.com/rfww/CMTMEME">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
           <!-- 2024 -->
           <div class="year-heading" data-year-heading="2024">2024</div>
 
-          <div class="publication" data-year="2024">
+          <div class="publication" data-year="2024" data-topic="copyright">
             <div class="img"><img src="./renjie_files/neurips24(b).png" alt=""></div>
             <div class="text">
               <div class="title">Geometry Cloak: Preventing TGS-based 3D Reconstruction from Copyrighted Images</div>
               <div class="authors">Qi Song, Ziyuan Luo, Ka Chun Cheung, Simon See, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">NeurIPS 2024</span> / <span class="tag"><a href="https://qsong2001.github.io/geometry_cloak/">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">Conference on Neural Information Processing Systems (NeurIPS) 2024</span> / <span class="tag"><a href="https://qsong2001.github.io/geometry_cloak/">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2024">
+          <div class="publication" data-year="2024" data-topic="copyright">
             <div class="img"><img src="./renjie_files/neurips24(a).png" alt=""></div>
             <div class="text">
               <div class="title">GaussianMarker: Uncertainty-Aware Copyright Protection of 3D Gaussian Splatting</div>
               <div class="authors">Xiufeng Huang, Ruiqi Li, Yiu-ming Cheung, Ka Chun Cheung, Simon See, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">NeurIPS 2024</span> / <span class="tag"><a href="https://kevinhuangxf.github.io/GaussianMarker">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">Conference on Neural Information Processing Systems (NeurIPS) 2024</span> / <span class="tag"><a href="https://kevinhuangxf.github.io/GaussianMarker">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2024">
+          <div class="publication" data-year="2024" data-topic="ai-security">
             <div class="img"><img src="./renjie_files/eccv-ruofei-2024.png" alt=""></div>
             <div class="text">
               <div class="title">Event Trojan: Asynchronous Event-based Backdoor Attacks</div>
               <div class="authors">Ruofei Wang, Qing Guo, Haoliang Li, <span class="author rw">Renjie WAN*</span></div>
-              <div><span class="venue">ECCV 2024</span> / <span class="tag"><a href="https://github.com/rfww/EventTrojan">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">European Conference on Computer Vision (ECCV) 2024</span> / <span class="tag"><a href="https://github.com/rfww/EventTrojan">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2024">
+          <div class="publication" data-year="2024" data-topic="neural-rep">
             <div class="img"><img src="./renjie_files/eccv-ziyuan-2024.png" alt=""></div>
             <div class="text">
               <div class="title">Imaging Interiors: An Implicit Solution to Electromagnetic Inverse Scattering Problems</div>
               <div class="authors">Ziyuan Luo, Boxin Shi, Haoliang Li, <span class="author rw">Renjie WAN*</span></div>
-              <div><span class="venue">ECCV 2024</span> / <span class="tag"><a href="https://luo-ziyuan.github.io/Imaging-Interiors/">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">European Conference on Computer Vision (ECCV) 2024</span> / <span class="tag"><a href="https://luo-ziyuan.github.io/Imaging-Interiors/">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2024">
+          <div class="publication" data-year="2024" data-topic="copyright">
             <div class="img"><img src="./renjie_files/eccv-xiufeng-2024.png" alt=""></div>
             <div class="text">
               <div class="title">GeometrySticker: Enabling Ownership Claim of Recolorized Neural Radiance Fields</div>
               <div class="authors">Xiufeng Huang, Ka Chun Cheung, Simon See, <span class="author rw">Renjie WAN*</span></div>
-              <div><span class="venue">ECCV 2024</span> / <span class="tag"><a href="https://kevinhuangxf.github.io/GeometrySticker/">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">European Conference on Computer Vision (ECCV) 2024</span> / <span class="tag"><a href="https://kevinhuangxf.github.io/GeometrySticker/">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2024">
+          <div class="publication" data-year="2024" data-topic="copyright">
             <div class="img"><img src="./renjie_files/eccv-songqi-2024.png" alt=""></div>
             <div class="text">
               <div class="title">Protecting NeRFs' Copyright via Plug-And-Play Watermarking Base Model</div>
               <div class="authors">Qi Song, Ziyuan Luo, Ka Chun Cheung, Simon See, <span class="author rw">Renjie WAN*</span></div>
-              <div><span class="venue">ECCV 2024</span> / <span class="tag"><a href="https://qsong2001.github.io/NeRFProtector">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">European Conference on Computer Vision (ECCV) 2024</span> / <span class="tag"><a href="https://qsong2001.github.io/NeRFProtector">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2024">
+          <div class="publication" data-year="2024" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/tnnls.png" alt=""></div>
             <div class="text">
               <div class="title">Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment</div>
               <div class="authors">Kecheng Chen, Jie Liu, <span class="author rw">Renjie WAN*</span>, Victor Ho-Fun Lee, Varut Vardhanabhuti, Hong Yan, Haoliang Li*</div>
-              <div><span class="venue">IEEE TNNLS 2024</span> / <span class="tag"><a href="https://tonyckc.github.io/UDA-BUA/">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS) 2024</span> / <span class="tag"><a href="https://tonyckc.github.io/UDA-BUA/">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2024">
+          <div class="publication" data-year="2024" data-topic="neural-rep">
             <div class="img"><img src="./renjie_files/CVPR2024.png" alt=""></div>
             <div class="text">
               <div class="title">Neural Underwater Scene Representation</div>
               <div class="authors">Yunkai Tang, Chengxuan Zhu, <span class="author rw">Renjie WAN*</span>, Chao Xu, Boxin Shi*</div>
-              <div><span class="venue">CVPR 2024</span> / <span class="tag"><a href="https://freebutuselesssoul.github.io/uwnerf">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2024</span> / <span class="tag"><a href="https://freebutuselesssoul.github.io/uwnerf">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2024">
+          <div class="publication" data-year="2024" data-topic="neural-rep">
             <div class="img"><img src="./renjie_files/aaai2024.png" alt=""></div>
             <div class="text">
               <div class="title">Colorizing Monochrome Radiance Fields</div>
               <div class="authors">Yean Cheng, <span class="author rw">Renjie WAN*</span>, Shucheng Weng, Chengxuan Zhu, Yakun Chang, Boxin Shi*</div>
-              <div><span class="venue">AAAI 2024 (Oral)</span> / <span class="tag"><a href="https://liquidammonia.github.io/color-nerf">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">AAAI Conference on Artificial Intelligence (AAAI) 2024 (Oral)</span> / <span class="tag"><a href="https://liquidammonia.github.io/color-nerf">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
           <!-- 2023 -->
           <div class="year-heading" data-year-heading="2023">2023</div>
 
-          <div class="publication" data-year="2023">
+          <div class="publication" data-year="2023" data-topic="copyright">
             <div class="img"><img src="./renjie_files/ICCV2023.png" alt=""></div>
             <div class="text">
               <div class="title">CopyRNeRF: Protecting the CopyRight of Neural Radiance Fields</div>
               <div class="authors">Ziyuan Luo, Qing Guo, Ka Chun Cheung, Simon See, <span class="author rw">Renjie Wan*</span></div>
-              <div><span class="venue">ICCV 2023</span> / <span class="tag"><a href="https://luo-ziyuan.github.io/copyrnerf/">Project Page with Paper and Code</a></span></div>
+              <div><span class="venue">IEEE/CVF International Conference on Computer Vision (ICCV) 2023</span> / <span class="tag"><a href="https://luo-ziyuan.github.io/copyrnerf/">Project Page with Paper and Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2023">
+          <div class="publication" data-year="2023" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/tcsvt2023.png" alt=""></div>
             <div class="text">
               <div class="title">Cross-Image Disentanglement for Low-Light Enhancement in Real World</div>
               <div class="authors">Lanqing Guo, <span class="author rw">Renjie Wan</span>, Wenhan Yang, Alex Kot, Bihan Wen</div>
-              <div><span class="venue">TCSVT 2023</span> / <span class="tag"><a href="https://github.com/GuoLanqing/CIDN?tab=readme-ov-file">Code</a></span></div>
+              <div><span class="venue">IEEE Transactions on Circuits and Systems for Video Technology (TCSVT) 2023</span> / <span class="tag"><a href="https://github.com/GuoLanqing/CIDN?tab=readme-ov-file">Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2023">
+          <div class="publication" data-year="2023" data-topic="neural-rep">
             <div class="img"><img src="./renjie_files/cvpr2023.png" alt=""></div>
             <div class="text">
               <div class="title">Occlusion-Free Scene Recovery via Neural Radiance Fields</div>
               <div class="authors">Chengxuan Zhu, <span class="author rw">Renjie Wan</span>, Yunkai Tang, Boxin Shi</div>
-              <div><span class="venue">CVPR 2023</span> / <span class="tag"><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhu_Occlusion-Free_Scene_Recovery_via_Neural_Radiance_Fields_CVPR_2023_paper.pdf">Paper</a></span> / <span class="tag"><a href="https://freebutuselesssoul.github.io/occnerf/">Project Page with Code</a></span></div>
+              <div><span class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2023</span> / <span class="tag"><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhu_Occlusion-Free_Scene_Recovery_via_Neural_Radiance_Fields_CVPR_2023_paper.pdf">Paper</a></span> / <span class="tag"><a href="https://freebutuselesssoul.github.io/occnerf/">Project Page with Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2023">
+          <div class="publication" data-year="2023" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/tpami2023.png" alt=""></div>
             <div class="text">
               <div class="title">Coarse-to-fine Disentangling Demoiring Framework for Recaptured Screen Images</div>
               <div class="authors">Ce Wang, Bin He, Shengsen Wu, <span class="author rw">Renjie Wan</span>, Boxin Shi, Ling-Yu Duan</div>
-              <div><span class="venue">TPAMI 2023</span></div>
+              <div><span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2023</span></div>
             </div>
           </div>
 
           <!-- 2022 -->
           <div class="year-heading" data-year-heading="2022">2022</div>
 
-          <div class="publication" data-year="2022">
+          <div class="publication" data-year="2022" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/tmm22.png" alt=""></div>
             <div class="text">
               <div class="title">Purifying Low-light Images via Near-Infrared Enlightened Image</div>
               <div class="authors"><span class="author rw">Renjie Wan</span>, Boxin Shi, Wenhan Yang, Bihan Wen, Ling-Yu Duan, Alex C. Kot</div>
-              <div><span class="venue"><a>TMM 2022</a></span> / <span class="tag"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9999306">Paper</a></span></div>
+              <div><span class="venue"><a>IEEE Transactions on Multimedia (TMM) 2022</a></span> / <span class="tag"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9999306">Paper</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2022">
+          <div class="publication" data-year="2022" data-topic="neural-rep">
             <div class="img"><img src="./renjie_files/NeurIPS2022.png" alt=""></div>
             <div class="text">
               <div class="title">Neural Transmitted Radiance Fields</div>
               <div class="authors">Chengxuan Zhu, <span class="author rw">Renjie Wan</span>, Boxin Shi</div>
-              <div><span class="venue">NeurIPS 2022</span> / <span class="tag"><a href="https://openreview.net/pdf?id=KglFYlTiASW">Paper</a></span> / <span class="tag"><a href="https://github.com/FreeButUselessSoul/TNeRF">Project Page</a></span></div>
+              <div><span class="venue">Conference on Neural Information Processing Systems (NeurIPS) 2022</span> / <span class="tag"><a href="https://openreview.net/pdf?id=KglFYlTiASW">Paper</a></span> / <span class="tag"><a href="https://github.com/FreeButUselessSoul/TNeRF">Project Page</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2022">
+          <div class="publication" data-year="2022" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/tp.png" alt=""></div>
             <div class="text">
               <div class="title">Benchmarking Single Image Reflection Removal Algorithms</div>
               <div class="authors"><span class="author rw">Renjie Wan</span>, Boxin Shi, Haoliang Li, Yuchen Hong, Ling-Yu Duan, Alex C. Kot</div>
-              <div><span class="venue">TPAMI 2022</span> / <span class="tag"><a href="./renjie_files/tpami.pdf">Paper</a></span> / <span class="tag"><a href="https://sir2data.github.io/">Project Page</a></span></div>
+              <div><span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2022</span> / <span class="tag"><a href="./renjie_files/tpami.pdf">Paper</a></span> / <span class="tag"><a href="https://sir2data.github.io/">Project Page</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2022">
+          <div class="publication" data-year="2022" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/aaai2022.png" alt=""></div>
             <div class="text">
               <div class="title">Low-Light Image Enhancement with Normalizing Flow</div>
               <div class="authors">Yufei Wang, <span class="author rw">Renjie Wan*</span>, Wenhan Yang, Haoliang Li, Lap-Pui Chau, Alex C. Kot</div>
-              <div><span class="venue">AAAI2022</span> / <span class="tag"><a href="https://arxiv.org/pdf/2109.05923.pdf">Paper</a></span> / <span class="tag"><a href="https://wyf0912.github.io/LLFlow/">Project webpage</a></span></div>
+              <div><span class="venue">AAAI Conference on Artificial Intelligence (AAAI) 2022</span> / <span class="tag"><a href="https://arxiv.org/pdf/2109.05923.pdf">Paper</a></span> / <span class="tag"><a href="https://wyf0912.github.io/LLFlow/">Project webpage</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="2022">
+          <div class="publication" data-year="2022" data-topic="ai-security">
             <div class="img"><img src="./renjie_files/TIFS00.png" alt=""></div>
             <div class="text">
               <div class="title">Learning Meta Pattern for Face Anti-Spoofing</div>
               <div class="authors">Rizhao Cai, Zhi Li, <span class="author rw">Renjie Wan</span>, Haoliang Li, Yongjian Hu, Alex C. Kot</div>
-              <div><span class="venue">IEEE Transactions on Information Forensics & Security, 2022</span></div>
+              <div><span class="venue">IEEE Transactions on Information Forensics and Security (TIFS) 2022</span></div>
             </div>
           </div>
 
           <!-- Early Papers (2020 and before) -->
           <div class="year-heading" data-year-heading="early">Early Papers</div>
 
-          <div class="publication" data-year="early">
+          <div class="publication" data-year="early" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/ijcv.png" alt=""></div>
             <div class="text">
               <div class="title">Face Image Reflection Removal</div>
               <div class="authors"><span class="author rw">Renjie Wan</span>, Boxin Shi, Haoliang Li, Ling-Yu Duan, Alex C. Kot</div>
-              <div><span class="venue">International Journal of Computer Vision 2020</span></div>
+              <div><span class="venue">International Journal of Computer Vision (IJCV) 2020</span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="early">
+          <div class="publication" data-year="early" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/TPAMI.png" alt=""></div>
             <div class="text">
               <div class="title">CoRRN: Cooperative Reflection Removal Network</div>
               <div class="authors"><span class="author rw">Renjie Wan</span>, Boxin Shi, Haoliang Li, Ling-Yu Duan, Ah-Hwee Tan, Alex C. Kot</div>
-              <div><span class="venue">TPAMI 2019</span> / <span class="tag"><a href="https://sir2data.github.io">Dataset</a></span> / <span class="tag"><a href="https://github.com/wanrenjie/CoRRN">Code</a></span></div>
+              <div><span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2019</span> / <span class="tag"><a href="https://sir2data.github.io">Dataset</a></span> / <span class="tag"><a href="https://github.com/wanrenjie/CoRRN">Code</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="early">
+          <div class="publication" data-year="early" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/Pub_CVPR18c.jpg" alt=""></div>
             <div class="text">
               <div class="title">CRRN: Multi-Scale Guided Concurrent Reflection Removal Network</div>
               <div class="authors"><span class="author rw">Renjie Wan</span>, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, Alex C. Kot</div>
-              <div><span class="venue">CVPR 2018</span> / <span class="tag"><a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Wan_CRRN_Multi-Scale_Guided_CVPR_2018_paper.pdf">Paper</a></span></div>
+              <div><span class="venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2018</span> / <span class="tag"><a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Wan_CRRN_Multi-Scale_Guided_CVPR_2018_paper.pdf">Paper</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="early">
+          <div class="publication" data-year="early" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/Pub_TIP18a.jpg" alt=""></div>
             <div class="text">
               <div class="title">Region-Aware Reflection Removal with Unified Content and Gradient Priors</div>
               <div class="authors"><span class="author rw">Renjie Wan</span>, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, Gao Wen, Alex C. Kot</div>
-              <div><span class="venue">IEEE Transactions on Image Processing 2018</span> / <span class="tag"><a href="https://ieeexplore.ieee.org/document/8300655">Paper</a></span></div>
+              <div><span class="venue">IEEE Transactions on Image Processing (TIP) 2018</span> / <span class="tag"><a href="https://ieeexplore.ieee.org/document/8300655">Paper</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="early">
+          <div class="publication" data-year="early" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/Pub_ICCV17a.jpg" alt=""></div>
             <div class="text">
               <div class="title">Benchmarking Single-Image Reflection Removal Algorithms</div>
               <div class="authors"><span class="author rw">Renjie Wan</span>, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, Alex C. Kot</div>
-              <div><span class="venue">International Conference on Computer Vision 2017</span> / <span class="tag"><a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Wan_Benchmarking_Single-Image_Reflection_ICCV_2017_paper.pdf">Paper</a></span></div>
+              <div><span class="venue">IEEE/CVF International Conference on Computer Vision (ICCV) 2017</span> / <span class="tag"><a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Wan_Benchmarking_Single-Image_Reflection_ICCV_2017_paper.pdf">Paper</a></span></div>
             </div>
           </div>
 
-          <div class="publication" data-year="early">
+          <div class="publication" data-year="early" data-topic="image-proc">
             <div class="img"><img src="./renjie_files/icip16.png" alt=""></div>
             <div class="text">
               <div class="title">Depth of field guided reflection removal</div>
               <div class="authors"><span class="author rw">Renjie Wan</span>, Boxin Shi, Ah-Hwee Tan, Alex C. Kot</div>
-              <div><span class="venue">International Conference on Image Processing 2016</span> / <span class="tag"><a href="https://github.com/wanrenjie/Depth-of-field-guided-reflection-removal">Code</a></span></div>
+              <div><span class="venue">IEEE International Conference on Image Processing (ICIP) 2016</span> / <span class="tag"><a href="https://github.com/wanrenjie/Depth-of-field-guided-reflection-removal">Code</a></span></div>
             </div>
           </div>
 
@@ -643,30 +699,67 @@
   </div> <!-- .outercontainer -->
 
   <script>
-    // Year filter logic
+    // Year + Topic filter logic
     (function(){
-      const btns = document.querySelectorAll('.year-filter button');
+      const yearBtns = document.querySelectorAll('.year-filter button[data-year]');
+      const topicBtns = document.querySelectorAll('.topic-filter button');
+      const topicToggle = document.querySelector('.topic-toggle');
+      const topicFilter = document.querySelector('.topic-filter');
       const pubs = document.querySelectorAll('#pubs .publication');
       const headings = document.querySelectorAll('[data-year-heading]');
+      let activeYear = 'all';
+      let activeTopic = 'all';
+      let filterMode = 'year';
 
-      function apply(year){
-        btns.forEach(b => b.classList.toggle('active', b.dataset.year === year || (year==='all' && b.dataset.year==='all')));
-        // Show/hide publications
+      topicToggle.addEventListener('click', () => {
+        const show = topicFilter.classList.toggle('show');
+        topicToggle.classList.toggle('active', show);
+        if (show) {
+          filterMode = 'topic';
+          activeYear = 'all';
+        } else {
+          filterMode = 'year';
+          activeTopic = 'all';
+        }
+        apply();
+      });
+
+      function apply(){
+        yearBtns.forEach(b => b.classList.toggle('active', filterMode === 'year' && b.dataset.year === activeYear));
+        topicBtns.forEach(b => b.classList.toggle('active', filterMode === 'topic' && b.dataset.topic === activeTopic));
         pubs.forEach(p => {
           const y = p.dataset.year;
-          p.classList.toggle('hidden', !(year==='all' || y===year));
+          const t = p.dataset.topic;
+          let show = false;
+          if (filterMode === 'year') {
+            show = activeYear === 'all' || y === activeYear;
+          } else {
+            show = activeTopic === 'all' || t === activeTopic;
+          }
+          p.classList.toggle('hidden', !show);
         });
-        // Show/hide year headings
         headings.forEach(h => {
           const y = h.getAttribute('data-year-heading');
-          h.classList.toggle('hidden', !(year==='all' || y===year));
+          if (filterMode === 'year') {
+            h.classList.toggle('hidden', !(activeYear === 'all' || y === activeYear));
+          } else {
+            const hasVisible = Array.from(pubs).some(p => p.dataset.topic === activeTopic && p.dataset.year === y);
+            h.classList.toggle('hidden', !hasVisible);
+          }
         });
-        // Scroll into view (optional)
-        // document.querySelector('#publications').scrollIntoView({behavior:'smooth', block:'start'});
       }
 
-      btns.forEach(b => b.addEventListener('click', () => apply(b.dataset.year)));
-      // default: 'all' active already
+      yearBtns.forEach(b => b.addEventListener('click', () => {
+        filterMode = 'year';
+        activeTopic = 'all';
+        activeYear = b.dataset.year;
+        if (topicFilter.classList.contains('show')) {
+          topicFilter.classList.remove('show');
+          topicToggle.classList.remove('active');
+        }
+        apply();
+      }));
+      topicBtns.forEach(b => b.addEventListener('click', () => { activeTopic = b.dataset.topic; apply(); }));
     })();
   </script>
 </body>
