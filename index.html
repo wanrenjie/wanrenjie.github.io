@@ -335,9 +335,14 @@
       <div class="text front">
         <h3>Our Selected Publications</h3>
 
+        <!-- View Toggle -->
+        <div class="year-filter" aria-label="View mode">
+          <button class="topic-toggle active" id="byYearsBtn">By Years</button>
+          <button class="topic-toggle" id="byTopicsBtn">By Topics</button>
+        </div>
+
         <!-- Year Filter Buttons -->
-        <div class="year-filter" aria-label="Filter publications by year">
-          <button class="topic-toggle">Topics</button>
+        <div class="year-filter" id="yearBtnsContainer" aria-label="Filter publications by year">
           <button class="active" data-year="all">All</button>
           <button data-year="2026">2026</button>
           <button data-year="2025">2025</button>
@@ -742,26 +747,35 @@
 
     // Year + Topic filter logic
     (function(){
-      const yearBtns = document.querySelectorAll('.year-filter button[data-year]');
+      const byYearsBtn = document.getElementById('byYearsBtn');
+      const byTopicsBtn = document.getElementById('byTopicsBtn');
+      const yearBtnsContainer = document.getElementById('yearBtnsContainer');
+      const topicBtnsContainer = document.querySelector('.topic-filter');
+      const yearBtns = document.querySelectorAll('#yearBtnsContainer button[data-year]');
       const topicBtns = document.querySelectorAll('.topic-filter button');
-      const topicToggle = document.querySelector('.topic-toggle');
-      const topicFilter = document.querySelector('.topic-filter');
       const pubs = document.querySelectorAll('#pubs .publication');
       const headings = document.querySelectorAll('[data-year-heading]');
       let activeYear = 'all';
       let activeTopic = 'all';
       let filterMode = 'year';
 
-      topicToggle.addEventListener('click', () => {
-        const show = topicFilter.classList.toggle('show');
-        topicToggle.classList.toggle('active', show);
-        if (show) {
-          filterMode = 'topic';
-          activeYear = 'all';
-        } else {
-          filterMode = 'year';
-          activeTopic = 'all';
-        }
+      byYearsBtn.addEventListener('click', () => {
+        filterMode = 'year';
+        byYearsBtn.classList.add('active');
+        byTopicsBtn.classList.remove('active');
+        yearBtnsContainer.classList.remove('hidden');
+        topicBtnsContainer.classList.remove('show');
+        activeTopic = 'all';
+        apply();
+      });
+
+      byTopicsBtn.addEventListener('click', () => {
+        filterMode = 'topic';
+        byTopicsBtn.classList.add('active');
+        byYearsBtn.classList.remove('active');
+        topicBtnsContainer.classList.add('show');
+        yearBtnsContainer.classList.add('hidden');
+        activeYear = 'all';
         apply();
       });
 
@@ -796,16 +810,13 @@
       }
 
       yearBtns.forEach(b => b.addEventListener('click', () => {
-        filterMode = 'year';
-        activeTopic = 'all';
         activeYear = b.dataset.year;
-        if (topicFilter.classList.contains('show')) {
-          topicFilter.classList.remove('show');
-          topicToggle.classList.remove('active');
-        }
         apply();
       }));
-      topicBtns.forEach(b => b.addEventListener('click', () => { activeTopic = b.dataset.topic; apply(); }));
+      topicBtns.forEach(b => b.addEventListener('click', () => {
+        activeTopic = b.dataset.topic;
+        apply();
+      }));
     })();
   </script>
 </body>
