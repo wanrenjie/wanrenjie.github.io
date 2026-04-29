@@ -169,6 +169,7 @@
       .topic-toggle{ font-size:13px; padding:5px 9px }
       .year-heading{ font-size:16px; margin:20px 0 6px }
       .phd-students{ grid-template-columns:1fr; font-size:14px; gap:4px }
+      .postdocs{ grid-template-columns:1fr; font-size:14px; gap:4px }
       #teaching ul{ font-size:14px }
       .group .front .title{ font-size:15px }
       .alumni li{ font-size:14px }
@@ -187,6 +188,13 @@
   .phd-students {
   display: grid;
   grid-template-columns: 1fr 1fr;  /* 两列 */
+  gap: 6px 20px;                   /* 行间距6px，列间距20px */
+  list-style-type: disc;           /* 保持小黑点 */
+  padding-left: 40px;              /* 和其他ul对齐 */
+}
+  .postdocs {
+  display: grid;
+  grid-template-columns: 1fr;      /* 单栏 */
   gap: 6px 20px;                   /* 行间距6px，列间距20px */
   list-style-type: disc;           /* 保持小黑点 */
   padding-left: 40px;              /* 和其他ul对齐 */
@@ -295,9 +303,12 @@
     <div class="content group anchor" id="group">
       <div class="text front">
         <h3>Group Members</h3>
+        <div class="title">Postdocs (* graduated from Renjie Group)</div>
+        <ul class="postdocs">
+          <li><a href="https://luo-ziyuan.github.io/">Ziyuan Luo</a>* (Supported by RGC Junior Research Fellow Scheme)</li>
+        </ul>
         <div class="title">Ph.D. Students</div>
         <ul class="phd-students">
-          <li><a href="https://luo-ziyuan.github.io/">Ziyuan Luo</a> (Fall 2022)</li>
           <li>Qi Song (Fall 2023)</li>
           <li>Ruofei Wang (Fall 2023)</li>
           <li><a href="https://kevinhuangxf.github.io/">Xiufeng Huang</a> (Fall 2023)</li>
@@ -305,8 +316,6 @@
           <li>Yingjie Lu (Fall 2025)</li>
           <li>Yangyi Zhao (Fall 2025)</li>
         </ul>
-        <div class="title">Research Assistants</div>
-        <ul><li>No Positions</li></ul>
         <div class="title">Alumni</div>
         <ul class="alumni">
           <li>Xuanning Cui (Visiting student from <a href="https://camera.pku.edu.cn/">PKU</a>)</li>
