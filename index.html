@@ -337,13 +337,13 @@
 
         <!-- View Toggle -->
         <div class="year-filter" aria-label="View mode">
-          <button class="topic-toggle active" id="byYearsBtn">By Years</button>
+          <button class="topic-toggle active" id="allBtn">All</button>
+          <button class="topic-toggle" id="byYearsBtn">By Years</button>
           <button class="topic-toggle" id="byTopicsBtn">By Topics</button>
         </div>
 
         <!-- Year Filter Buttons -->
-        <div class="year-filter" id="yearBtnsContainer" aria-label="Filter publications by year">
-          <button class="active" data-year="all">All</button>
+        <div class="year-filter hidden" id="yearBtnsContainer" aria-label="Filter publications by year">
           <button data-year="2026">2026</button>
           <button data-year="2025">2025</button>
           <button data-year="2024">2024</button>
@@ -354,7 +354,6 @@
 
         <!-- Topic Filter Buttons -->
         <div class="topic-filter" aria-label="Filter publications by topic">
-          <button class="active" data-topic="all">All</button>
           <button data-topic="security-copyright">Security & Copyright</button>
           <button data-topic="neural-rep">Neural Representation</button>
           <button data-topic="event">Event Vision</button>
@@ -747,6 +746,7 @@
 
     // Year + Topic filter logic
     (function(){
+      const allBtn = document.getElementById('allBtn');
       const byYearsBtn = document.getElementById('byYearsBtn');
       const byTopicsBtn = document.getElementById('byTopicsBtn');
       const yearBtnsContainer = document.getElementById('yearBtnsContainer');
@@ -757,25 +757,47 @@
       const headings = document.querySelectorAll('[data-year-heading]');
       let activeYear = 'all';
       let activeTopic = 'all';
-      let filterMode = 'year';
+      let filterMode = 'all';
+
+      function resetToAll() {
+        filterMode = 'all';
+        activeYear = 'all';
+        activeTopic = 'all';
+        allBtn.classList.add('active');
+        byYearsBtn.classList.remove('active');
+        byTopicsBtn.classList.remove('active');
+        yearBtnsContainer.classList.add('hidden');
+        topicBtnsContainer.classList.remove('show');
+        apply();
+      }
+
+      allBtn.addEventListener('click', resetToAll);
 
       byYearsBtn.addEventListener('click', () => {
         filterMode = 'year';
+        allBtn.classList.remove('active');
         byYearsBtn.classList.add('active');
         byTopicsBtn.classList.remove('active');
         yearBtnsContainer.classList.remove('hidden');
         topicBtnsContainer.classList.remove('show');
         activeTopic = 'all';
+        if (activeYear === 'all') {
+          activeYear = '2026';
+        }
         apply();
       });
 
       byTopicsBtn.addEventListener('click', () => {
         filterMode = 'topic';
+        allBtn.classList.remove('active');
         byTopicsBtn.classList.add('active');
         byYearsBtn.classList.remove('active');
         topicBtnsContainer.classList.add('show');
         yearBtnsContainer.classList.add('hidden');
         activeYear = 'all';
+        if (activeTopic === 'all') {
+          activeTopic = 'security-copyright';
+        }
         apply();
       });
 
@@ -786,10 +808,10 @@
           const y = p.dataset.year;
           const t = p.dataset.topic;
           const t2 = p.dataset.topic2;
-          let show = false;
+          let show = true;
           if (filterMode === 'year') {
             show = activeYear === 'all' || y === activeYear;
-          } else {
+          } else if (filterMode === 'topic') {
             show = activeTopic === 'all' || t === activeTopic || (t2 && t2 === activeTopic);
           }
           p.classList.toggle('hidden', !show);
@@ -798,13 +820,15 @@
           const y = h.getAttribute('data-year-heading');
           if (filterMode === 'year') {
             h.classList.toggle('hidden', !(activeYear === 'all' || y === activeYear));
-          } else {
+          } else if (filterMode === 'topic') {
             const hasVisible = Array.from(pubs).some(p => {
               const pt = p.dataset.topic;
               const pt2 = p.dataset.topic2;
               return (activeTopic === 'all' || pt === activeTopic || (pt2 && pt2 === activeTopic)) && p.dataset.year === y;
             });
             h.classList.toggle('hidden', !hasVisible);
+          } else {
+            h.classList.remove('hidden');
           }
         });
       }
