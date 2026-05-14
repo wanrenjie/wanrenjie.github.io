@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万人杰 - 个人简历</title>
+  <style>
+    :root {
+      --text: #1f2937;
+      --muted: #4b5563;
+      --accent: #1a73e8;
+      --line: #e5e7eb;
+      --bg: #ffffff;
+      --section-bg: #f8fafc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 50px 30px 80px;
+    }
+    header {
+      text-align: center;
+      padding-bottom: 28px;
+      margin-bottom: 32px;
+      border-bottom: 2px solid var(--text);
+    }
+    header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    header .contact {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    header a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    header a:hover { text-decoration: underline; }
+
+    section { margin-bottom: 34px; }
+    section:last-child { margin-bottom: 0; }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1.5px solid var(--text);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    .entry { margin-bottom: 16px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+    }
+    .entry-title {
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .entry-meta {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .entry-detail {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .entry ul {
+      margin: 6px 0 0 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .entry li { margin-bottom: 3px; }
+
+    .pub-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 18px 0 10px;
+      color: var(--text);
+    }
+    .pub {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+      padding-left: 14px;
+      text-indent: -14px;
+    }
+    .pub .venue {
+      color: var(--muted);
+      font-style: italic;
+    }
+    .pub strong { font-weight: 600; }
+
+    .award, .patent {
+      margin-bottom: 6px;
+      font-size: 14.5px;
+    }
+    .patent { line-height: 1.6; }
+
+    .media-item {
+      margin-bottom: 8px;
+      font-size: 14.5px;
+    }
+    .media-item a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .media-item a:hover { text-decoration: underline; }
+
+    .student { margin-bottom: 14px; }
+    .student-name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .student ul {
+      margin: 4px 0 0 18px;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .student ul li { margin-bottom: 2px; }
+
+    .activity-group {
+      margin-bottom: 14px;
+    }
+    .activity-group h4 {
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .activity-group p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .grant {
+      margin-bottom: 14px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .grant-title {
+      font-weight: 600;
+    }
+    .grant-meta {
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+
+    @media print {
+      body { font-size: 13px; }
+      .container { padding: 30px 24px; max-width: 100%; }
+      header h1 { font-size: 26px; }
+      h2 { font-size: 15px; }
+      a { text-decoration: none; color: var(--text); }
+      section { margin-bottom: 22px; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 30px 18px 50px; }
+      header h1 { font-size: 26px; }
+      .entry-header { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>万人杰</h1>
+      <div class="contact">
+        香港浸会大学<br>
+        renjiewan@hkbu.edu.hk<br>
+        <a href="https://scholar.google.com/citations?user=S8_ES4MAAAAJ">Google Scholar 个人主页</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>研究方向</h2>
+      <p>人工智能治理 (AI Governance)、数字水印 (Digital Watermarking)、3D 高斯泼溅 (3D Gaussian Splatting)</p>
+    </section>
+
+    <section>
+      <h2>教育背景</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">新加坡南洋理工大学</span>
+          <span class="entry-meta">2019 年 1 月</span>
+        </div>
+        <div class="entry-detail">哲学博士 (Doctor of Philosophy)</div>
+        <ul>
+          <li>导师：Prof. Alex C. Kot</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">中国成都 电子科技大学</span>
+          <span class="entry-meta">2012 年 7 月</span>
+        </div>
+        <div class="entry-detail">工学学士 (Bachelor of Engineering)</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>工作经历</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">香港浸会大学 计算机科学系</span>
+          <span class="entry-meta">中国香港</span>
+        </div>
+        <div class="entry-detail">助理教授 (Assistant Professor) &nbsp;|&nbsp; 2022 年 2 月 – 至今</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">香港科技园孵化器项目评审专家组</span>
+          <span class="entry-meta">中国香港</span>
+        </div>
+        <div class="entry-detail">评审专家 (Assessment Panel Member) &nbsp;|&nbsp; 2024 年 9 月 – 至今</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">南洋理工大学、隆德大学</span>
+          <span class="entry-meta">新加坡、瑞典</span>
+        </div>
+        <div class="entry-detail">Wallenberg-NTU 总统博士后研究员 &nbsp;|&nbsp; 2020 年 9 月 – 2022 年 2 月</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">南洋理工大学 快速丰富目标搜索实验室 (ROSE Lab)</span>
+          <span class="entry-meta">新加坡</span>
+        </div>
+        <div class="entry-detail">研究员 (Research Fellow) &nbsp;|&nbsp; 2019 年 3 月 – 2020 年 8 月</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">北京大学</span>
+          <span class="entry-meta">中国北京</span>
+        </div>
+        <div class="entry-detail">访问研究员 (Guest Researcher, 兼职) &nbsp;|&nbsp; 2019 年 1 月 – 2019 年 12 月</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">南洋理工大学 快速丰富目标搜索实验室 (ROSE Lab)</span>
+          <span class="entry-meta">新加坡</span>
+        </div>
+        <div class="entry-detail">项目专员 (Project Officer) &nbsp;|&nbsp; 2018 年 9 月 – 2019 年 3 月</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>科研项目</h2>
+      <div class="grant">
+        <div class="grant-title">香港杰出青年学者计划 (Early Career Scheme), 2026–2027, 主持</div>
+        <div class="grant-meta">资助金额：78 万港币。资助机构：香港研究资助局 (RGC)<br>项目名称：Bridging the Performance Gap in USV Operations: Confronting Water Surface Reflection Challenges</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">优配研究金 (General Research Fund), 2025–2026, 主持</div>
+        <div class="grant-meta">资助金额：67 万港币。资助机构：香港研究资助局 (RGC)<br>项目名称：Quantum Machine Learning for Healthcare Data Processing</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">企业捐赠基金 (Industry Gift Fund), 2025, 主持</div>
+        <div class="grant-meta">资助金额：99 万港币。<br>项目名称：Copyright Management and Infringement Prevention for Next-Generation AIGC</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">企业合作基金 (Industry Fund), 2024, 主持</div>
+        <div class="grant-meta">资助金额：30 万港币。<br>项目名称：Develop a multispectral imaging algorithm for costal surveillance</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">广东省基础与应用基础研究基金 面上项目, 2024–2026, 主持</div>
+        <div class="grant-meta">资助金额：15 万人民币。资助机构：广东省基础与应用基础研究基金<br>项目名称：Occlusion removal in a dynamic environment</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">国家自然科学基金 青年科学基金项目, 2024–2026, 主持</div>
+        <div class="grant-meta">资助金额：30 万人民币。资助机构：国家自然科学基金委员会<br>项目名称：Reflection removal in dynamic environment</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">企业合作基金 (Industry Fund), 2023, 主持</div>
+        <div class="grant-meta">资助金额：10 万港币。<br>项目名称：Image reconstruction from multiple images with reflection</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">广东省基础与应用基础研究基金深圳市联合基金 青年基金项目, 2023–2025, 主持</div>
+        <div class="grant-meta">资助金额：10 万人民币。资助机构：广东省基础与应用基础研究基金<br>项目名称：Face image reflection removal based on neural radiance fields</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">蓝天研究基金 (Blue-Sky Research Fund), 2022–2025, 主持</div>
+        <div class="grant-meta">资助金额：103.65 万港币。资助机构：香港浸会大学<br>项目名称：The rejuvenation of classical silent movie using AI</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">Wallenberg-NTU 校长博士后奖学金 (5/1231), 2020–2022, 主持</div>
+        <div class="grant-meta">资助金额：10 万新币。资助机构：南洋理工大学、瑞典 Knut and Alice Wallenberg 基金会</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">微软云研究软件奖学金, 2019, 主持</div>
+        <div class="grant-meta">资助金额：5,000 美元。资助机构：微软 (Microsoft)</div>
+      </div>
+      <div class="grant">
+        <div class="grant-title">创新及科技支援计划 (Innovation and Technology Support Programme), 2022–2024, 联合主持 (Co-PI)</div>
+        <div class="grant-meta">资助金额：3,542.4462 万港币。资助机构：创新科技基金 (ITF)<br>项目名称：Future Cinema Systems: Next-Generation Art Technologies</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>获奖情况</h2>
+      <div class="award"><strong>杰出研究成果奖</strong>，香港浸会大学，2025</div>
+      <div class="award"><strong>银奖</strong>，第 50 届日内瓦国际发明展，2025</div>
+      <div class="award"><strong>最佳论文奖</strong> (Best Paper Award)，VCIP 2020</div>
+      <div class="award"><strong>杰出审稿人</strong> (Outstanding Reviewer)，ICCV 2019</div>
+    </section>
+
+    <section>
+      <h2>媒体报道</h2>
+      <div class="media-item">
+        <strong>星岛日报</strong><br>
+        <a href="https://www.stheadline.com/edu-news/3250297/%E6%B5%B8%E5%A4%A7%E7%A0%94AI%E4%BF%AE%E5%BE%A9-%E7%99%BE%E5%B9%B4%E9%BB%98%E7%89%87%E6%B7%BB%E8%89%B2%E5%BD%A9">浸大研AI修復 百年默片添色彩</a>
+      </div>
+      <div class="media-item">
+        <strong>南华早报</strong> (South China Morning Post)<br>
+        <a href="https://www.scmp.com/yp/discover/entertainment/tech-gaming/article/3227399/hong-kong-baptist-university-computer-scientists-use-ai-give-colour-1922-movie-danse-macabre">Hong Kong Baptist University computer scientists use AI to give colour to 1922 movie Danse Macabre</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>专利</h2>
+      <div class="patent"><strong>Renjie Wan</strong>, Ziyuan Luo, “System And Method For Adding Copyright Protection To Implicit 3D Model”, US Patent App. 18/670,740</div>
+      <div class="patent"><strong>Renjie Wan</strong>, Ziyuan Luo, “System And Method For Electromagnetic Inverse Scattering Image Reconstruction”, US Patent No. 20260017851A1</div>
+    </section>
+
+    <section class="pub-section">
+      <h2>发表论文</h2>
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:12px;">(* 通讯作者；<u>我的学生</u>；<em>共同指导学生</em>)</p>
+
+      <h3>国际会议</h3>
+      <div class="pub"><u>Haoliang Han</u>, <u>Ziyuan Luo</u>, <strong>Renjie Wan</strong>*, "GaussTrace: Provenance Analysis of 3D Gaussian Splatting Models with Evidence-based LLM Reasoning", <span class="venue">ICML 2026</span></div>
+      <div class="pub"><u>Ruofei Wang</u>, Peiqi Duan, Ka Chun Cheung, Simon See, Boxin Shi, <strong>Renjie Wan</strong>*, "Texvent: Asynchronous Event Data Simulation via Text Prompt", <span class="venue">CVPR 2026</span></div>
+      <div class="pub"><u>Qi Song</u>, <u>Haoliang Han</u>, <u>Ziyuan Luo</u>, Jun Qi, <strong>Renjie Wan</strong>*, "Securing INR-Based Steganography with Quantum Circuit-driven Weight Initialization", <span class="venue">ICASSP 2026</span></div>
+      <div class="pub"><u>Haoliang Han</u>, <u>Qi Song</u>, Jun Qi, <strong>Renjie Wan</strong>*, "Quantum-Inspired Frequency Attenuation for Enhanced Targeted Fabrication Attacks in Object Detection", <span class="venue">ICASSP 2026</span></div>
+      <div class="pub"><u>Qi Song</u>, <u>Ziyuan Luo</u>, <strong>Renjie Wan</strong>*, "Creating Blank Canvas Against AI-enabled Image Forgery", <span class="venue">AAAI 2026</span></div>
+      <div class="pub"><u>Haoliang Han</u>, <u>Ziyuan Luo</u>, Jun Qi, Anderson Rocha, <strong>Renjie Wan</strong>*, "GS-Checker: Tampering Localization for 3D Gaussian Splatting", <span class="venue">AAAI 2026</span></div>
+      <div class="pub"><u>Ziyuan Luo</u>, <u>Yangyi Zhao</u>, Ka Chun Cheung, Simon See, <strong>Renjie Wan</strong>*, "ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation", <span class="venue">NeurIPS 2025</span></div>
+      <div class="pub"><u>Qi Song</u>, <u>Ziyuan Luo</u>, Ka Chun Cheung, Simon See, <strong>Renjie Wan</strong>*, "Align 3D Representation and Text Embedding for 3D Content Personalization", <span class="venue">ACM MM 2025</span></div>
+      <div class="pub"><u>Xiufeng Huang</u>, <u>Ziyuan Luo</u>, <u>Qi Song</u>, <u>Ruofei Wang</u>, <strong>Renjie Wan</strong>*, "MarkSplatter: Generalizable Watermarking for 3D Gaussian Splatting Model via Splatter Image Structure", <span class="venue">ACM MM 2025</span></div>
+      <div class="pub"><u>Xiufeng Huang</u>, Ka Chun Cheung, Runmin Cong, Simon See, <strong>Renjie Wan</strong>*, "Stereo-GS: Multi-View Stereo Vision Model for Generalizable 3D Gaussian Splatting Reconstruction", <span class="venue">ACM MM 2025</span></div>
+      <div class="pub"><u>Ruofei Wang</u>, Peiqi Duan, Boxin Shi, <strong>Renjie Wan</strong>*, "Asynchronous Event Error-Minimizing Noise for Safeguarding Event Dataset", <span class="venue">ICCV 2025</span></div>
+      <div class="pub"><u>Ruofei Wang</u>, Hongzhan Lin, <u>Ziyuan Luo</u>, Ka Chun Cheung, Simon See, Jing Ma, <strong>Renjie Wan</strong>*, "Meme Trojan: Backdoor Attacks Against Hateful Meme Detection via Cross-Modal Triggers", <span class="venue">AAAI 2025</span> <strong>(Oral)</strong></div>
+      <div class="pub"><u>Ruofei Wang</u>, <u>Ziyuan Luo</u>, Haoliang Li, <strong>Renjie Wan</strong>*, "Scenedoor: An Environmental Backdoor Attack for Face Recognition", <span class="venue">VCIP 2024</span></div>
+      <div class="pub"><u>Xiufeng Huang</u>, Ruiqi Li, Yiu-ming Cheung, Ka Chun Cheung, Simon See, <strong>Renjie Wan</strong>*, "GaussianMarker: Uncertainty-Aware Copyright Protection of 3D Gaussian Splatting", <span class="venue">NeurIPS 2024</span></div>
+      <div class="pub"><u>Qi Song</u>, <u>Ziyuan Luo</u>, Ka Chun Cheung, Simon See, <strong>Renjie Wan</strong>*, "Geometry Cloak: Preventing TGS-based 3D Reconstruction from Copyrighted Images", <span class="venue">NeurIPS 2024</span></div>
+      <div class="pub"><u>Ruofei Wang</u>, Qing Guo, Haoliang Li, <strong>Renjie Wan</strong>*, "Event Trojan: Asynchronous Event-based Backdoor Attacks", <span class="venue">ECCV 2024</span></div>
+      <div class="pub"><u>Ziyuan Luo</u>, Boxin Shi, Haoliang Li, <strong>Renjie Wan</strong>*, "Imaging Interiors: An Implicit Solution to Electromagnetic Inverse Scattering Problems", <span class="venue">ECCV 2024</span></div>
+      <div class="pub"><u>Xiufeng Huang</u>, Ka Chun Cheung, Simon See, <strong>Renjie Wan</strong>*, "GeometrySticker: Enabling Ownership Claim of Recolorized Neural Radiance Fields", <span class="venue">ECCV 2024</span></div>
+      <div class="pub"><u>Qi Song</u>, <u>Ziyuan Luo</u>, Ka Chun Cheung, Simon See, <strong>Renjie Wan</strong>*, "Protecting NeRFs' Copyright via Plug-And-Play Watermarking Base Model", <span class="venue">ECCV 2024</span></div>
+      <div class="pub"><em>Yunkai Tang</em>, <em>Chengxuan Zhu</em>, <strong>Renjie Wan</strong>*, Chao Xu, Boxin Shi*, "Neural Underwater Scene Representation", <span class="venue">CVPR 2024</span></div>
+      <div class="pub"><u>Ruofei Wang</u>, <strong>Renjie Wan</strong>, Zongyu Guo, Qing Guo, Rui Huang, "Spy-Watermark: Robust Invisible Watermarking for Backdoor Attack", <span class="venue">ICASSP 2024</span></div>
+      <div class="pub"><em>Yean Cheng</em>, <strong>Renjie Wan</strong>*, Shucheng Weng, Yakun Cheng, Boxin Shi*, "Colorizing Monochrome Radiance Fields", <span class="venue">AAAI 2024</span> <strong>(Oral)</strong></div>
+      <div class="pub"><u>Ziyuan Luo</u>, Qing Guo, Ka Chun Cheung, Simon See, <strong>Renjie Wan</strong>*, "CopyRNeRF: Protecting the CopyRight of Neural Radiance Fields", <span class="venue">ICCV 2023</span></div>
+      <div class="pub"><em>Chengxuan Zhu</em>, <strong>Renjie Wan</strong>, Yunkai Tang, Boxin Shi, "Occlusion-Free Scene Recovery via Neural Radiance Fields", <span class="venue">CVPR 2023</span></div>
+      <div class="pub">Shulin Tian, Yufei Wang, <strong>Renjie Wan</strong>, Wenhan Yang, Alex C. Kot, Bihan Wen, "Enhancing Low-light Images using Infrared Encoded Images", <span class="venue">ICIP 2023</span></div>
+      <div class="pub">Ting Jin, Xingran Xie, <strong>Renjie Wan</strong>, Qingli Li, Yan Wang, "Gene-induced Multimodal Pre-training for Image-omic Classification", <span class="venue">MICCAI 2023</span></div>
+      <div class="pub"><em>Yufei Wang</em>, <strong>Renjie Wan</strong>, Wenhan Yang, Bihan Wen, Lap-pui Chau, Alex C Kot, "Removing Image Artifacts From Scratched Lens Protectors", <span class="venue">ISCAS 2023</span></div>
+      <div class="pub"><em>Chengxuan Zhu</em>*, <strong>Renjie Wan</strong>*, Boxin Shi, "Neural Transmitted Radiance Fields", <span class="venue">NeurIPS 2022</span> <strong>(*共同一作)</strong></div>
+      <div class="pub"><em>Yufei Wang</em>, <strong>Renjie Wan</strong>*, Wenhan Yang, Haoliang Li, Lap-Pui Chau, Alex C. Kot, "Low-Light Image Enhancement with Normalizing Flow", <span class="venue">AAAI 2022</span></div>
+      <div class="pub">Lanqing Guo, <strong>Renjie Wan</strong>, Guan-Ming Su, Alex C. Kot, Bihan Wen, "Multi-Scale Feature Guided Low-Light Image Enhancement", <span class="venue">ICIP 2021</span></div>
+      <div class="pub">Chenyu Yi, Haoliang Li, <strong>Renjie Wan</strong>, Alex C. Kot, "Improving Robustness of DNNs against Common Corruptions via Gaussian Adversarial Training", <span class="venue">VCIP 2020</span> <strong>(Best paper award)</strong></div>
+      <div class="pub">Jinchao Zhou, <strong>Renjie Wan</strong>, Haoliang Li, Alex C. Kot, "The Enhancement of Underexposed Images with Blurred Reflectance", <span class="venue">VCIP 2020</span></div>
+      <div class="pub">Haoliang Li, Yufei Wang, <strong>Renjie Wan</strong>, Shiqi Wang, Tie-qiang Li, Alex C. Kot, "Domain Generalization for Medical Imaging Classification with Linear-Dependency Regularization", <span class="venue">NeurIPS 2020</span></div>
+      <div class="pub"><strong>Renjie Wan</strong>, Boxin Shi, Haoliang Li, Lingyu Duan, Alex C. Kot, "Reflection Scene Separation From a Single Image", <span class="venue">CVPR 2020</span></div>
+      <div class="pub">Daiqian Ma, <strong>Renjie Wan</strong>, Ce Wang, Boxin Shi, Ling-Yu Duan, "Learning to Jointly Generate and Separate Reflections", <span class="venue">ICCV 2019</span></div>
+      <div class="pub">Daiqian Ma, Bai Yan, <strong>Renjie Wan</strong>, Ce Wang, Boxin Shi, Ling-Yu Duan, "See through the windshield from surveillance camera images", <span class="venue">ACM Multimedia 2019</span></div>
+      <div class="pub">Wang Ce, <strong>Renjie Wan</strong>, Feng Gao, Boxin Shi, Alex C. Kot, Ling-Yu Duan, "Learning to remove reflection for text images", <span class="venue">ICME 2019</span></div>
+      <div class="pub">Haoliang Li, Sinno Jialin Pan, <strong>Renjie Wan</strong>, Alex C. Kot, "Heterogeneous Transfer Learning via Deep Matrix Completion with Adversarial Kernel Embedding", <span class="venue">AAAI 2019</span></div>
+      <div class="pub"><strong>Renjie Wan</strong>, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, Alex C. Kot, "CRRN: Multi-Scale Guided Concurrent Reflection Removal Network", <span class="venue">CVPR 2018</span></div>
+      <div class="pub"><strong>Renjie Wan</strong>, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, Alex C. Kot, "Benchmarking single-image reflection removal algorithms", <span class="venue">ICCV 2017</span></div>
+      <div class="pub"><strong>Renjie Wan</strong>, Boxin Shi, Ah-Hwee Tan, Alex C. Kot, "Sparsity based reflection removal using external patches", <span class="venue">ICME 2017</span> </div>
+      <div class="pub"><strong>Renjie Wan</strong>, Boxin Shi, Ah-Hwee Tan, Alex C. Kot, "Depth of field guided reflection removal", <span class="venue">ICIP 2016</span> </div>
+
+      <h3>国际期刊</h3>
+      <div class="pub">Chenqi Kong, Anwei Luo, Peijun Bao, Haoliang Li, <strong>Renjie Wan</strong>, Zengwei Zheng, Anderson Rocha, Alex C. Kot, "Open-Set Deepfake Detection: A Parameter-Efficient Adaptation Method with Forgery Style Mixture", <span class="venue">IEEE Transactions on Circuits and Systems for Video Technology, 2026</span></div>
+      <div class="pub">Bo Ding, Tiexin Qin, <strong>Renjie Wan</strong>, Haoliang Li, "Generalizable Dynamic Representation Learning for Source Identification in Sequential Data", <span class="venue">IEEE Transactions on Knowledge and Data Engineering, 2026</span></div>
+      <div class="pub"><u>Ziyuan Luo</u>, Jun Liu, Haoliang Li, Anderson Rocha, <strong>Renjie Wan</strong>*, "MantleMark: Migrating Watermarks from Multi-View Images to Radiance Fields via Frequency Modulation", <span class="venue">IEEE Transactions on Information Forensics and Security (TIFS), 2025</span></div>
+      <div class="pub"><u>Ziyuan Luo</u>, Anderson Rocha, Boxin Shi, Qing Guo, Haoliang Li, <strong>Renjie Wan</strong>*, "The NeRF Signature: Codebook-Aided Watermarking for Neural Radiance Fields", <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025</span></div>
+      <div class="pub">Kecheng Chen, Jie Liu, <strong>Renjie Wan</strong>*, Victor Ho-Fun Lee, Varut Vardhanabhuti, Hong Yan, Haoliang Li*, "Unsupervised Domain Adaptation for Low-dose CT Reconstruction via Bayesian Uncertainty Alignment", <span class="venue">IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2024</span></div>
+      <div class="pub">Lanqing Guo, <strong>Renjie Wan</strong>, Wenhan Yang, Alex C. Kot, Bihan Wen, "Cross-Image Disentanglement for Low-Light Enhancement in Real World", <span class="venue">IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), 2023</span></div>
+      <div class="pub">Ce Wang, Bin He, Shengsen Wu, <strong>Renjie Wan</strong>, Boxin Shi, Ling-Yu Duan, "Coarse-to-fine Disentangling Demoiréing Framework for Recaptured Screen Images", <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2023</span></div>
+      <div class="pub">Wei Huang, Wenqiang Xu, <strong>Renjie Wan</strong>, Peng Zhang, Yufei Zha, Meng Pang, "Auto Diagnosis of Parkinson's Disease via a Deep Learning Model Based on Mixed Emotional Facial Expressions", <span class="venue">IEEE Journal of Biomedical and Health Informatics, 2023</span></div>
+      <div class="pub"><strong>Renjie Wan</strong>, Boxin Shi, Wenhan Yang, Bihan Wen, Ling-Yu Duan, Alex C. Kot, "Purifying Low-light images via Near-infrared Enlightened Image", <span class="venue">IEEE Transactions on Multimedia (TMM), 2022</span></div>
+      <div class="pub">Rizhao Cai, Zhi Li, <strong>Renjie Wan</strong>, Haoliang Li, Yongjian Hu, Alex C. Kot, "Learning Meta Pattern for Face Anti-Spoofing", <span class="venue">IEEE Transactions on Information Forensics &amp; Security (TIFS), 2022</span></div>
+      <div class="pub">Ce Wang, Dejia Xu, <strong>Renjie Wan</strong>, Bin He, Boxin Shi, Alex C. Kot, Ling-yu Duan, "Background Scene Recovery from an Image Looking through Colored Glass", <span class="venue">IEEE Transactions on Multimedia (TMM), 2022</span></div>
+      <div class="pub"><strong>Renjie Wan</strong>, Boxin Shi, Haoliang Li, Lingyu Duan, Alex C. Kot, "Benchmarking Singe-Image Reflection Removal Algorithms", <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2022</span></div>
+      <div class="pub">Haoliang Li, Shiqi Wang, <strong>Renjie Wan</strong>, Alex C. Kot, "GMFAD: Towards Generalized Visual Recognition via Multi-Layer Feature Alignment and Disentanglement", <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2020</span></div>
+      <div class="pub"><strong>Renjie Wan</strong>, Boxin Shi, Haoliang Li, Ling-Yu Duan, Alex C. Kot, "Face Image Reflection Removal", <span class="venue">International Journal of Computer Vision (IJCV), 2020</span></div>
+      <div class="pub">Haoliang Li, <strong>Renjie Wan</strong>, Shiqi Wang, Alex C. Kot, "Unsupervised Domain Adaptation in the Wild via Disentangling Representation Learning", <span class="venue">International Journal of Computer Vision (IJCV), 2020</span></div>
+      <div class="pub"><strong>Renjie Wan</strong>, Boxin Shi, Haoliang Li, Ling-Yu Duan, Ah-Hwee Tan, Alex C. Kot, "CoRRN: Cooperative Reflection Removal Network", <span class="venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2019</span></div>
+      <div class="pub"><strong>Renjie Wan</strong>, Boxin Shi, Ling-Yu Duan, Ah-Hwee Tan, Wen Gao, Alex C. Kot, "Region-Aware Reflection Removal with Unified Content and Gradient Priors", <span class="venue">IEEE Transactions on Image Processing (TIP), 2018</span></div>
+    </section>
+
+    <section>
+      <h2>指导学生</h2>
+      <div class="student">
+        <div class="student-name">Ziyuan Luo，香港浸会大学 博士生 &nbsp;|&nbsp; 2022 年 9 月 – 至今</div>
+        <ul>
+          <li>Yakun Scholarship Scheme for Mainland Postgraduate Students, HKBU (2025)</li>
+          <li>Madam Kwok Chung Bo Fun PhD Student Research Excellence Award, HKBU (2025)</li>
+          <li>最佳研究表现奖 ×4，香港浸会大学 计算机科学系</li>
+          <li>NeurIPS Scholar Award (2025)</li>
+        </ul>
+      </div>
+      <div class="student">
+        <div class="student-name">Qi Song，香港浸会大学 博士生 &nbsp;|&nbsp; 2023 年 9 月 – 至今</div>
+        <ul>
+          <li>最佳研究表现奖 ×1，香港浸会大学 计算机科学系</li>
+          <li>ACM Travel Award (2025)</li>
+        </ul>
+      </div>
+      <div class="student">
+        <div class="student-name">Xiufeng Huang，香港浸会大学 博士生 &nbsp;|&nbsp; 2023 年 9 月 – 至今</div>
+        <ul>
+          <li>最佳研究表现奖 ×2，香港浸会大学 计算机科学系</li>
+        </ul>
+      </div>
+      <div class="student">
+        <div class="student-name">Ruofei Wang，香港浸会大学 博士生 &nbsp;|&nbsp; 2023 年 9 月 – 至今</div>
+        <ul>
+          <li>最佳研究表现奖 ×2，香港浸会大学 计算机科学系</li>
+          <li>AAAI Travel Award (2025)</li>
+        </ul>
+      </div>
+      <div class="student">
+        <div class="student-name">Haoliang Han，香港浸会大学 博士生 &nbsp;|&nbsp; 2024 年 9 月 – 至今</div>
+      </div>
+      <div class="student">
+        <div class="student-name">Yangyi Zhao，香港浸会大学 博士生 &nbsp;|&nbsp; 2025 年 9 月 – 至今</div>
+      </div>
+      <div class="student">
+        <div class="student-name">Yingjie Lu，香港浸会大学 博士生 &nbsp;|&nbsp; 2025 年 9 月 – 至今</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>学术服务</h2>
+      <div class="activity-group">
+        <h4>领域主席 (Area Chairs)</h4>
+        <p>ACM MM, 2024, 2025<br>IEEE Workshop On Multimedia Signal Processing, 2022</p>
+      </div>
+      <div class="activity-group">
+        <h4>副主编 (Associate Editors)</h4>
+        <p>Pattern Recognition</p>
+      </div>
+      <div class="activity-group">
+        <h4>会议审稿人</h4>
+        <p>NeurIPS, ACCV, WACV, AAAI, ECCV, ICCV, CVPR, ICASSP</p>
+      </div>
+      <div class="activity-group">
+        <h4>基金评审专家</h4>
+        <p>国家自然科学基金委员会</p>
+      </div>
+      <div class="activity-group">
+        <h4>期刊审稿人</h4>
+        <p>IEEE Transactions on Pattern Analysis and Machine Intelligence<br>International Journal of Computer Vision<br>IEEE Transactions on Image Processing<br>IEEE Transactions on Multimedia<br>IEEE Transactions on Information Forensics and Security</p>
+      </div>
+      <div class="activity-group">
+        <h4>特邀报告</h4>
+        <p>"A concurrent deep learning model to remove reflections", VALSE 2018<br>"Reflection scene separation from a single image", VALSE 2020<br>"Reflection: Removal, Scene separation, and beyond", Lund University 2021<br>"When Neural Radiance Fields Meet the Light Occlusion", CityU 2023<br>"Building NeRF in the Wild and Protecting Its Copyright", University of Macau 2023</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
