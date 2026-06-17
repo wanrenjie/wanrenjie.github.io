@@ -208,6 +208,75 @@
 }
 
 /* 移动端更小屏幕优化 */
+/* News vertical scroll */
+.news-scroll {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.news-scroll ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+.news-scroll a {
+  text-decoration: underline;
+}
+.news-scroll li strong {
+  color: #0b4b75;
+}
+.news-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.news-scroll::-webkit-scrollbar-track {
+  background: #eef3f8;
+  border-radius: 10px;
+}
+.news-scroll::-webkit-scrollbar-thumb {
+  background: #0b4b75;
+  border-radius: 10px;
+}
+.news-scroll::-webkit-scrollbar-thumb:hover {
+  background: #084063;
+}
+.news-highlight {
+  color: #b91c1c;
+  font-weight: 600;
+}
+/* Funding section */
+.funding-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.funding-text {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 18px;
+}
+.funding-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.funding-logos {
+  flex-wrap: wrap;
+}
+.funding-logos img {
+  height: 64px;
+  width: auto;
+  max-width: 280px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.funding-logos img:hover {
+  opacity: 1;
+}
+
 @media (max-width:480px){
   .header{ font-size:12px }
   .header .ftheader{ font-size:13px }
@@ -222,6 +291,7 @@
     <div class="outercontainer header">
       <div class="ftheader text"><a href="#lab">Renjie Group</a></div>
       <div class="ftsubheader text"><a href="#home">PI</a></div>
+      <div class="ftsubheader text"><a href="#news">News</a></div>
       <div class="ftsubheader text publication"><a href="#group">Group Members</a></div>    
       <div class="ftsubheader text teaching"><a href="#teaching">Teaching</a></div>
       <div class="ftsubheader text publication"><a href="#publications">Publications</a></div>
@@ -299,6 +369,30 @@
   </div>
 
 </div>
+
+    <!-- News -->
+    <div class="content anchor" id="news">
+      <div class="text front">
+        <h3>News</h3>
+        <div class="news-scroll">
+          <ul>
+            <li><strong>[2026.06]</strong> Our paper "Texvent" won the <span class="news-highlight">Best Paper Award Candidate</span> at CVPR 2026!</li>
+            <li><strong>[2026.05]</strong> <span class="news-highlight">Three papers</span> accepted at AAAI 2026.</li>
+            <li><strong>[2026.04]</strong> One paper accepted at <span class="news-highlight">Pattern Recognition 2026</span>.</li>
+            <li><strong>[2026.04]</strong> Dr. Ziyuan Luo received the <span class="news-highlight">RGC Junior Research Fellow Scheme</span>! <a href="https://www.comp.hkbu.edu.hk/v1/?page=std_ach&id=250">[Link]</a></li>
+            <li><strong>[2026.03]</strong> Renjie Group's <span class="news-highlight">first Ph.D. graduate</span>, Dr. Ziyuan Luo! <a href="./renjie_files/ziyuan-graduation.jpg">[Link]</a></li>
+            <li><strong>[2026.02]</strong> One paper accepted at ICML 2026.</li>
+            <li><strong>[2025.12]</strong> Our paper accepted at <span class="news-highlight">NeurIPS 2025</span>.</li>
+            <li><strong>[2025.10]</strong> One paper accepted at <span class="news-highlight">TIFS 2025</span>.</li>
+            <li><strong>[2025.10]</strong> Ziyuan Luo received the <span class="news-highlight">Madam Kwok Chung Bo Fun PhD Student Research Excellence Awards 2025/26</span>. <a href="https://gs.hkbu.edu.hk/page/detail/3901">[Link]</a></li>
+            <li><strong>[2025.09]</strong> <span class="news-highlight">Three papers</span> accepted at ACM Multimedia 2025.</li>
+            <li><strong>[2025.08]</strong> One paper accepted at ICCV 2025 <span class="news-highlight">(Highlight)</span>.</li>
+            <li><strong>[2025.07]</strong> One paper accepted at <span class="news-highlight">TPAMI 2025</span>.</li>
+            <li><strong>[2025.01]</strong> One paper <span class="news-highlight">(Oral)</span> accepted at AAAI 2025.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- Group -->
     <div class="content group anchor" id="group">
@@ -728,6 +822,16 @@
       </div> <!-- .text.front -->
     </div> <!-- #publications -->
 
+    <!-- Funding -->
+    <div class="content" style="margin-top:10px">
+      <div class="funding-text">Our Research is Supported by</div>
+      <div class="funding-logos">
+        <img src="./renjie_files/rgc_logo.png" alt="RGC (Research Grants Council)">
+        <img src="./renjie_files/National_Natural_Science_Foundation_of_China_logo.png" alt="NSFC (National Natural Science Foundation of China)">
+        <img src="./renjie_files/gdstc_logo.png" alt="GDSTC (Guangdong Science and Technology Commission)" style="filter:invert(1)">
+      </div>
+    </div>
+
   </div> <!-- .outercontainer -->
 
   <script>
@@ -869,6 +973,38 @@
         activeTopic = b.dataset.topic;
         apply();
       }));
+    })();
+
+    // News vertical auto-scroll
+    (function(){
+      const container = document.querySelector('.news-scroll');
+      if (!container) return;
+      let scrollInterval;
+      let userScrollTimeout;
+
+      function startAutoScroll() {
+        stopAutoScroll();
+        scrollInterval = setInterval(() => {
+          container.scrollTop += 1;
+          if (container.scrollTop >= container.scrollHeight - container.clientHeight - 1) {
+            container.scrollTop = 0;
+          }
+        }, 50);
+      }
+
+      function stopAutoScroll() {
+        if (scrollInterval) clearInterval(scrollInterval);
+      }
+
+      container.addEventListener('mouseenter', stopAutoScroll);
+      container.addEventListener('mouseleave', startAutoScroll);
+      container.addEventListener('scroll', () => {
+        stopAutoScroll();
+        if (userScrollTimeout) clearTimeout(userScrollTimeout);
+        userScrollTimeout = setTimeout(startAutoScroll, 2000);
+      });
+
+      startAutoScroll();
     })();
   </script>
 </body>
