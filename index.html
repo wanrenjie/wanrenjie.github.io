@@ -1057,37 +1057,7 @@
       langButtons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
     })();
 
-    // News vertical auto-scroll
-    (function(){
-      const container = document.querySelector('.news-scroll');
-      if (!container) return;
-      let scrollInterval;
-      let userScrollTimeout;
-
-      function startAutoScroll() {
-        stopAutoScroll();
-        scrollInterval = setInterval(() => {
-          container.scrollTop += 1;
-          if (container.scrollTop >= container.scrollHeight - container.clientHeight - 1) {
-            container.scrollTop = 0;
-          }
-        }, 50);
-      }
-
-      function stopAutoScroll() {
-        if (scrollInterval) clearInterval(scrollInterval);
-      }
-
-      container.addEventListener('mouseenter', stopAutoScroll);
-      container.addEventListener('mouseleave', startAutoScroll);
-      container.addEventListener('scroll', () => {
-        stopAutoScroll();
-        if (userScrollTimeout) clearTimeout(userScrollTimeout);
-        userScrollTimeout = setTimeout(startAutoScroll, 2000);
-      });
-
-      startAutoScroll();
-    })();
+    // News vertical auto-scroll (disabled by request)
   </script>
 </body>
 </html>
