@@ -239,10 +239,45 @@
 .news-scroll::-webkit-scrollbar-thumb:hover {
   background: #084063;
 }
-.news-highlight {
-  color: #b91c1c;
-  font-weight: 600;
-}
+    .news-highlight {
+      color: #b91c1c;
+      font-weight: 600;
+    }
+    /* News heading row + language toggle */
+    .news-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .news-head h3 { margin: 0 }
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #ffffff;
+      flex-shrink: 0;
+    }
+    .lang-toggle button {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: #0b4b75;
+      padding: 5px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .15s ease-in-out;
+      line-height: 1.4;
+    }
+    .lang-toggle button:hover { background: #e8eef5 }
+    .lang-toggle button.active {
+      background: #0b4b75;
+      color: #fff;
+    }
+    .news-list[hidden] { display: none !important }
 /* Funding section */
 .funding-row {
   display: flex;
@@ -373,9 +408,15 @@
     <!-- News -->
     <div class="content anchor" id="news">
       <div class="text front">
-        <h3>News</h3>
+        <div class="news-head">
+          <h3>News</h3>
+          <div class="lang-toggle" role="group" aria-label="News language">
+            <button class="active" data-lang="en">EN</button>
+            <button data-lang="zh">中文</button>
+          </div>
+        </div>
         <div class="news-scroll">
-          <ul>
+          <ul class="news-list" data-lang="en">
             <li><strong>[2026.06]</strong> Our paper "Texvent" won the <span class="news-highlight">Best Paper Award Candidate</span> at CVPR 2026!</li>
             <li><strong>[2026.05]</strong> <span class="news-highlight">Three papers</span> accepted at AAAI 2026.</li>
             <li><strong>[2026.04]</strong> One paper accepted at <span class="news-highlight">Pattern Recognition 2026</span>.</li>
@@ -389,7 +430,25 @@
             <li><strong>[2025.09]</strong> <span class="news-highlight">Three papers</span> accepted at ACM Multimedia 2025.</li>
             <li><strong>[2025.08]</strong> One paper accepted at ICCV 2025 <span class="news-highlight">(Highlight)</span>.</li>
             <li><strong>[2025.07]</strong> One paper accepted at <span class="news-highlight">TPAMI 2025</span>.</li>
+            <li><strong>[2025.04]</strong> Renjie Wan awarded a <span class="news-highlight">Silver Medal</span> at the 50th International Exhibition of Inventions Geneva. <a href="https://www.comp.hkbu.edu.hk/v1/?page=fac_ach&id=231">[Link]</a></li>
             <li><strong>[2025.01]</strong> One paper <span class="news-highlight">(Oral)</span> accepted at AAAI 2025.</li>
+          </ul>
+          <ul class="news-list" data-lang="zh" hidden>
+            <li><strong>[2026.06]</strong> 论文 "Texvent" 荣获 CVPR 2026 <span class="news-highlight">最佳论文提名</span>!</li>
+            <li><strong>[2026.05]</strong> <span class="news-highlight">三篇论文</span>入选 AAAI 2026。</li>
+            <li><strong>[2026.04]</strong> 一篇论文被 <span class="news-highlight">Pattern Recognition 2026</span> 接收。</li>
+            <li><strong>[2026.04]</strong> 罗梓源博士<span class="news-highlight">入选研资局新晋学者计划</span>! <a href="https://www.comp.hkbu.edu.hk/v1/?page=std_ach&id=250">[链接]</a></li>
+            <li><strong>[2026.03]</strong> 恭贺罗梓源博士——<span class="news-highlight">课题组首位博士毕业生</span>! <a href="./renjie_files/ziyuan-graduation.jpg">[链接]</a></li>
+            <li><strong>[2026.02]</strong> 一篇论文被 ICML 2026 接收。</li>
+            <li><strong>[2026.01]</strong> 万人杰荣获 <span class="news-highlight">2024/25 年度杰出研究成果奖</span>。 <a href="https://www.comp.hkbu.edu.hk/v1/?page=fac_ach&id=243">[链接]</a></li>
+            <li><strong>[2025.12]</strong> 一篇论文被 <span class="news-highlight">NeurIPS 2025</span> 接收。</li>
+            <li><strong>[2025.10]</strong> 一篇论文被 <span class="news-highlight">TIFS 2025</span> 接收。</li>
+            <li><strong>[2025.10]</strong> 罗梓源荣获 <span class="news-highlight">2025/26 年度郭钟宝芬博士生卓越研究奖</span>。 <a href="https://gs.hkbu.edu.hk/page/detail/3901">[链接]</a></li>
+            <li><strong>[2025.09]</strong> <span class="news-highlight">三篇论文</span>入选 ACM Multimedia 2025。</li>
+            <li><strong>[2025.08]</strong> 一篇论文被 ICCV 2025 接收，并入选 <span class="news-highlight">Highlight</span>。</li>
+            <li><strong>[2025.07]</strong> 一篇论文被 <span class="news-highlight">TPAMI 2025</span> 接收。</li>
+            <li><strong>[2025.04]</strong> 万人杰荣获第 50 届日内瓦国际发明展<span class="news-highlight">银奖</span>。 <a href="https://www.comp.hkbu.edu.hk/v1/?page=fac_ach&id=231">[链接]</a></li>
+            <li><strong>[2025.01]</strong> 一篇论文入选 AAAI 2025 <span class="news-highlight">Oral</span>。</li>
           </ul>
         </div>
       </div>
@@ -974,6 +1033,26 @@
         activeTopic = b.dataset.topic;
         apply();
       }));
+    })();
+
+    // News language toggle (EN / 中文)
+    (function(){
+      const newsSection = document.getElementById('news');
+      if (!newsSection) return;
+      const langButtons = newsSection.querySelectorAll('.lang-toggle button');
+      const langLists = newsSection.querySelectorAll('.news-list[data-lang]');
+
+      function setLang(lang){
+        langButtons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+        langLists.forEach(list => {
+          list.hidden = list.dataset.lang !== lang;
+        });
+        // Reset scroll position for the auto-scroll
+        const scroll = newsSection.querySelector('.news-scroll');
+        if (scroll) scroll.scrollTop = 0;
+      }
+
+      langButtons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
     })();
 
     // News vertical auto-scroll
