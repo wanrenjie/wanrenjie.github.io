@@ -92,6 +92,73 @@
       color:#fff;
       border-color:#0b4b75;
     }
+    /* Group photo collapsible */
+    .group-head{
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .group-head h3{ margin:0 }
+    .group-photo-toggle{ position:relative; margin:0 }
+    .group-photo-toggle > summary{
+      display:inline-block;
+      appearance:none;
+      border:1px solid #cbd5e1;
+      background:#e8eef5;
+      color:#0b4b75;
+      padding:2px 8px;
+      border-radius:4px;
+      cursor:pointer;
+      font-size:12px;
+      font-weight:400;
+      list-style:none;
+      user-select:none;
+      line-height:1.4;
+      transition:all .15s ease-in-out;
+    }
+    .group-photo-toggle > summary::-webkit-details-marker{ display:none }
+    .group-photo-toggle > summary::marker{ display:none }
+    .group-photo-toggle > summary:hover{ box-shadow:0 2px 6px rgba(0,0,0,.06) }
+    .group-photo-toggle[open] > summary{
+      background:#0b4b75;
+      color:#fff;
+      border-color:#0b4b75;
+    }
+    .group-photo-toggle[open] > summary::after{
+      content:" ▴";
+      font-size:9px;
+    }
+    .group-photo-toggle > summary::after{
+      content:" ▾";
+      font-size:9px;
+    }
+    .group-photo-list{
+      list-style:none;
+      position:absolute;
+      top:calc(100% + 8px);
+      left:0;
+      min-width:200px;
+      margin:0;
+      padding:8px 14px;
+      background:#fff;
+      border:1px solid #e8eef5;
+      border-radius:8px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+      z-index:10;
+    }
+    .group-photo-toggle{ margin-bottom:14px }
+    .group-photo-list li{
+      margin-bottom:6px;
+      font-size:14px;
+      color:#374151;
+    }
+    .group-photo-list .date{
+      display:inline-block;
+      min-width:104px;
+      font-weight:600;
+      color:#0b4b75;
+    }
     /* Year filter bar */
     .year-filter{
       display:flex;
@@ -464,7 +531,15 @@
     <!-- Group -->
     <div class="content group anchor" id="group">
       <div class="text front">
-        <h3>Group Members</h3>
+        <div class="group-head">
+          <h3>Group Members</h3>
+          <details class="group-photo-toggle">
+            <summary>Photos</summary>
+            <ul class="group-photo-list">
+              <li><a class="date" href="./renjie_files/group-photo-2026-07-17.jpg">2026.07.17</a></li>
+            </ul>
+          </details>
+        </div>
         <div class="title">Postdocs (* graduated from Renjie Group)</div>
         <ul class="postdocs">
           <li><a href="https://luo-ziyuan.github.io/">Ziyuan Luo</a>* (Supported by RGC Junior Research Fellow Scheme)</li>
